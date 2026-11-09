@@ -339,22 +339,28 @@
                   </div>
                 </article>
                 <article class="news-feature news-video-card">
-                  <img
-                    class="news-video-card__poster"
-                    src="assets/media/fpv-flight.jpg"
-                    alt="FPV-дрон в полёте"
-                  />
+                  <video
+                    class="news-card-video"
+                    src="assets/media/fpv-cinema.mp4"
+                    poster="assets/media/fpv-flight.jpg"
+                    muted
+                    loop
+                    autoplay
+                    playsinline
+                    preload="metadata"
+                    aria-label="FPV-дрон используется для динамичной съёмки"
+                  ></video>
                   <div>
                     <p>Видео · кино</p>
                     <h3>Как FPV-дроны меняют язык съёмки</h3>
                     <button
                       type="button"
-                      class="news-video-open news-video-card__action"
-                      data-news-title="Как FPV-дроны меняют язык съёмки"
-                      data-news-date="Видео · кино"
+                      class="news-video-card__status"
+                      data-news-video-toggle
+                      aria-label="Приостановить видео"
                     >
-                      <span class="play-mark" aria-hidden="true">▶</span>
-                      Смотреть видео
+                      <span class="play-mark" aria-hidden="true"></span>Видео
+                      без звука
                     </button>
                   </div>
                 </article>
@@ -448,61 +454,28 @@
             </div>
           </div>
           <article
-            class="news-reader"
+            class="news-reader detail-layer"
             data-news-reader
             hidden
             aria-live="polite"
+            role="dialog"
+            aria-modal="true"
           >
-            <button
-              type="button"
-              class="reader-close"
-              data-reader-close
-              aria-label="Закрыть новость"
-            >
-              ×
-            </button>
-            <p data-news-reader-date></p>
-            <h3 data-news-reader-title></h3>
-            <p data-news-reader-body></p>
-            <a class="button button-primary" href="#callback"
-              >Записаться на событие <span aria-hidden="true">→</span></a
-            >
-          </article>
-          <article
-            class="news-reader news-video-reader"
-            data-video-reader
-            hidden
-            aria-live="polite"
-          >
-            <button
-              type="button"
-              class="reader-close"
-              data-video-reader-close
-              aria-label="Закрыть видео"
-            >
-              ×
-            </button>
-            <p>Кино · FPV-полёт</p>
-            <h3>Дроны в кадре: скорость, траектория и точка зрения пилота</h3>
-            <p>
-              Посмотрите короткий ролик из жизни клуба. FPV-техника позволяет
-              камере двигаться вместе с действием и видеть привычные
-              пространства по-новому.
-            </p>
-            <div class="club-video">
-              <video-player>
-                <video-skin
-                  style="display: block; width: 100%; aspect-ratio: 16/9"
-                >
-                  <video
-                    src="assets/media/fpv-cinema.mp4"
-                    poster="assets/media/fpv-flight.jpg"
-                    playsinline
-                    preload="metadata"
-                    controls
-                  ></video>
-                </video-skin>
-              </video-player>
+            <div class="detail-panel detail-panel--news">
+              <button
+                type="button"
+                class="reader-close"
+                data-reader-close
+                aria-label="Закрыть новость"
+              >
+                ×
+              </button>
+              <p data-news-reader-date></p>
+              <h3 data-news-reader-title></h3>
+              <p data-news-reader-body></p>
+              <a class="button button-primary" href="#callback"
+                >Записаться на занятие <span aria-hidden="true">→</span></a
+              >
             </div>
           </article>
         </div>
@@ -519,18 +492,25 @@
             </p>
           </div>
           <div class="team-list" data-no-trail data-scroll-stage>
-            <article class="team-member reveal-on-scroll" data-team-card>
+            <article
+              class="team-member reveal-on-scroll"
+              data-team-card
+              data-team-name="Егор Газин"
+              data-team-role="Инструктор по мультироторным системам"
+              data-team-image="assets/media/egor-gazin.jpg"
+              data-team-bio="Егор Дмитриевич Газин обучает управлению мультироторными системами разных классов, пайке и техническому обслуживанию БПЛА. Его основной фокус — гоночные дроны."
+            >
               <button
                 class="team-photo-button"
                 type="button"
                 data-team-toggle
                 aria-expanded="false"
-                aria-controls="profile-egor"
+                aria-controls="team-profile-dialog"
               >
                 <img
                   src="assets/media/egor-gazin.jpg"
                   alt="Егор Газин, инструктор клуба Гудвин"
-                /><span>Открыть профиль</span>
+                />
               </button>
               <div>
                 <h3>Егор Газин</h3>
@@ -541,33 +521,33 @@
                 type="button"
                 data-team-toggle
                 aria-expanded="false"
-                aria-controls="profile-egor"
+                aria-controls="team-profile-dialog"
               >
-                Подробнее <span aria-hidden="true">+</span>
+                <span>Опыт инструктора</span
+                ><svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="m9 5 7 7-7 7"></path>
+                </svg>
               </button>
-              <div class="team-profile" id="profile-egor" hidden>
-                <p>
-                  Егор Дмитриевич Газин обучает управлению мультироторными
-                  системами разных классов, пайке и техническому обслуживанию
-                  БПЛА. Его основной фокус — гоночные дроны.
-                </p>
-                <a href="#callback"
-                  >Записаться на занятие <span aria-hidden="true">→</span></a
-                >
-              </div>
             </article>
-            <article class="team-member reveal-on-scroll" data-team-card>
+            <article
+              class="team-member reveal-on-scroll"
+              data-team-card
+              data-team-name="Артём Серышев"
+              data-team-role="Старший инструктор"
+              data-team-image="assets/media/artem-seryshev.jpg"
+              data-team-bio="Артём Игоревич Серышев — участник и призёр соревнований ФГДР. Работает с аппаратами всех габаритов: от лёгких гоночных моделей до тяжёлых многоосевых платформ."
+            >
               <button
                 class="team-photo-button"
                 type="button"
                 data-team-toggle
                 aria-expanded="false"
-                aria-controls="profile-artem"
+                aria-controls="team-profile-dialog"
               >
                 <img
                   src="assets/media/artem-seryshev.jpg"
                   alt="Артём Серышев, старший инструктор клуба Гудвин"
-                /><span>Открыть профиль</span>
+                />
               </button>
               <div>
                 <h3>Артём Серышев</h3>
@@ -578,33 +558,33 @@
                 type="button"
                 data-team-toggle
                 aria-expanded="false"
-                aria-controls="profile-artem"
+                aria-controls="team-profile-dialog"
               >
-                Подробнее <span aria-hidden="true">+</span>
+                <span>Опыт инструктора</span
+                ><svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="m9 5 7 7-7 7"></path>
+                </svg>
               </button>
-              <div class="team-profile" id="profile-artem" hidden>
-                <p>
-                  Артём Игоревич Серышев — участник и призёр соревнований ФГДР.
-                  Работает с аппаратами всех габаритов: от лёгких гоночных
-                  моделей до тяжёлых многоосевых платформ.
-                </p>
-                <a href="#callback"
-                  >Записаться на занятие <span aria-hidden="true">→</span></a
-                >
-              </div>
             </article>
-            <article class="team-member reveal-on-scroll" data-team-card>
+            <article
+              class="team-member reveal-on-scroll"
+              data-team-card
+              data-team-name="Олег Гринев"
+              data-team-role="Инструктор по спортивному пилотированию"
+              data-team-image="assets/media/oleg-grinev.jpg"
+              data-team-bio="Олег Дмитриевич Гринев — участник официальных соревнований ФГДР. Уверенно работает с БПЛА разного веса и размера, специализируется на гоночных моделях."
+            >
               <button
                 class="team-photo-button"
                 type="button"
                 data-team-toggle
                 aria-expanded="false"
-                aria-controls="profile-oleg"
+                aria-controls="team-profile-dialog"
               >
                 <img
                   src="assets/media/oleg-grinev.jpg"
                   alt="Олег Гринев, инструктор клуба Гудвин"
-                /><span>Открыть профиль</span>
+                />
               </button>
               <div>
                 <h3>Олег Гринев</h3>
@@ -615,23 +595,50 @@
                 type="button"
                 data-team-toggle
                 aria-expanded="false"
-                aria-controls="profile-oleg"
+                aria-controls="team-profile-dialog"
               >
-                Подробнее <span aria-hidden="true">+</span>
+                <span>Опыт инструктора</span
+                ><svg aria-hidden="true" viewBox="0 0 24 24">
+                  <path d="m9 5 7 7-7 7"></path>
+                </svg>
               </button>
-              <div class="team-profile" id="profile-oleg" hidden>
-                <p>
-                  Олег Дмитриевич Гринев — участник официальных соревнований
-                  ФГДР. Уверенно работает с БПЛА разного веса и размера,
-                  специализируется на гоночных моделях.
-                </p>
-                <a href="#callback"
-                  >Записаться на занятие <span aria-hidden="true">→</span></a
-                >
-              </div>
             </article>
           </div>
         </div>
+        <aside
+          class="detail-layer team-detail-layer"
+          data-team-overlay
+          hidden
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="team-profile-dialog"
+        >
+          <div class="detail-panel detail-panel--team">
+            <button
+              type="button"
+              class="reader-close"
+              data-team-close
+              aria-label="Закрыть профиль"
+            >
+              ×
+            </button>
+            <div class="team-detail-portrait">
+              <img
+                data-team-detail-image
+                src="assets/media/egor-gazin.jpg"
+                alt="Егор Газин, инструктор клуба Гудвин"
+              />
+            </div>
+            <div class="team-detail-copy">
+              <p data-team-detail-role></p>
+              <h3 id="team-profile-dialog" data-team-detail-name></h3>
+              <p data-team-detail-bio></p>
+              <a class="button button-primary" href="#callback"
+                >Записаться на занятие <span aria-hidden="true">→</span></a
+              >
+            </div>
+          </div>
+        </aside>
       </section>
       <section class="documents-section section" id="documents">
         <div class="container documents-layout" data-scroll-stage>
@@ -699,13 +706,13 @@
           </div>
         </div>
         <article
-          class="document-viewer container"
+          class="document-viewer detail-layer"
           data-document-viewer
           data-no-trail
           hidden
           tabindex="-1"
         >
-          <div class="document-sheet">
+          <div class="document-sheet detail-panel detail-panel--document">
             <button
               type="button"
               class="reader-close"
@@ -782,30 +789,32 @@
                 placeholder="+7 (___) ___-__-__"
                 required
             /></label>
-            <label
-              >На какое занятие хотите записаться?<select
-                name="session"
-                data-session-select
-              >
-                <option value="">Выберите дату</option>
-                <option value="Вторник · 18:00–20:00">
-                  Вторник · 18:00–20:00
-                </option>
-                <option value="Четверг · 18:00–20:00">
-                  Четверг · 18:00–20:00
-                </option>
-                <option value="Суббота · 12:00–14:00">
-                  Суббота · 12:00–14:00
-                </option>
-              </select></label
-            >
-            <label
-              >Когда удобно позвонить?<select name="time">
-                <option>С 8:00 до 12:00</option>
-                <option>С 12:00 до 16:00</option>
-                <option>С 16:00 до 18:00</option>
-              </select></label
-            >
+            <fieldset class="session-picker" data-session-picker>
+              <legend>На какое занятие хотите записаться?</legend>
+              <div class="session-picker__grid">
+                <label
+                  ><input
+                    type="radio"
+                    name="session"
+                    value="Вторник · 18:00–20:00"
+                  /><span><b>Вт</b><small>18:00–20:00</small></span></label
+                >
+                <label
+                  ><input
+                    type="radio"
+                    name="session"
+                    value="Четверг · 18:00–20:00"
+                  /><span><b>Чт</b><small>18:00–20:00</small></span></label
+                >
+                <label
+                  ><input
+                    type="radio"
+                    name="session"
+                    value="Суббота · 12:00–14:00"
+                  /><span><b>Сб</b><small>12:00–14:00</small></span></label
+                >
+              </div>
+            </fieldset>
             <p class="booking-choice" data-booking-choice>
               Можно выбрать удобную дату в расписании выше.
             </p>

@@ -4,3 +4,4 @@ vendor/videojs/
 .DS_Store
 Thumbs.db
 
+qa/

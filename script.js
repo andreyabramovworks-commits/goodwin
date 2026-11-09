@@ -239,11 +239,13 @@ function initRevealHover(e) {
 (document.querySelectorAll("[data-scroll-form]").forEach((e) =>
   e.addEventListener("click", () => {
     const t = document.querySelector("[data-booking-choice]");
-    const n = document.querySelector("[data-session-select]");
+    const n = document.querySelector(
+      `input[name="session"][value="${e.dataset.session}"]`,
+    );
     t &&
       e.dataset.session &&
       ((t.textContent = `Вы выбрали: ${e.dataset.session}. Мы подтвердим запись звонком.`),
-      n && (n.value = e.dataset.session));
+      n && (n.checked = true));
     scrollToCallback();
   }),
 ),
@@ -261,12 +263,12 @@ function initRevealHover(e) {
           "Спасибо, ждите звонка"));
     }),
   document
-    .querySelector("[data-session-select]")
+    .querySelector("[data-session-picker]")
     ?.addEventListener("change", (e) => {
       const t = document.querySelector("[data-booking-choice]");
       t &&
-        (t.textContent = e.currentTarget.value
-          ? `Вы выбрали: ${e.currentTarget.value}. Мы подтвердим запись звонком.`
+        (t.textContent = e.target.value
+          ? `Вы выбрали: ${e.target.value}. Мы подтвердим запись звонком.`
           : "Можно выбрать удобную дату в расписании выше.");
     }),
   document.querySelectorAll("[data-reveal-hover]").forEach(initRevealHover));
@@ -284,36 +286,85 @@ const reader = document.querySelector("[data-news-reader]"),
   showSurface = (e) => {
     e &&
       ((e.hidden = !1),
+      e.classList.contains("detail-layer") &&
+        document.body.classList.add("has-open-dialog"),
       e.classList.remove("is-closing", "is-open"),
       e.getBoundingClientRect(),
       e.classList.add("is-open"),
+      reduceMotion ||
+        e.animate([{ opacity: 0 }, { opacity: 1 }], {
+          duration: 220,
+          easing: "ease-out",
+        }),
       surfaceMotion(
-        e,
+        e.querySelector(".detail-panel") || e,
         [
-          { opacity: 0, transform: "translateY(16px) scale(0.985)" },
-          { opacity: 1, transform: "translateY(0) scale(1)" },
+          {
+            opacity: 0,
+            transform: "translateY(24px) scale(0.955)",
+            filter: "blur(12px)",
+          },
+          {
+            opacity: 1,
+            transform: "translateY(0) scale(1)",
+            filter: "blur(0)",
+          },
         ],
-        { duration: 520, easing: "cubic-bezier(0.22, 1, 0.36, 1)" },
+        { duration: 540, easing: "cubic-bezier(0.22, 1, 0.36, 1)" },
       ));
   },
   hideSurface = (e) => {
     if (!e || e.hidden) return;
     (e.classList.add("is-closing"), e.classList.remove("is-open"));
-    const t = e.classList.contains("team-profile") ? 500 : 380,
+    const t = 340,
       n = surfaceMotion(
-        e,
+        e.querySelector(".detail-panel") || e,
         [
-          { opacity: 1, transform: "translateY(0) scale(1)" },
-          { opacity: 0, transform: "translateY(-8px) scale(0.992)" },
+          {
+            opacity: 1,
+            transform: "translateY(0) scale(1)",
+            filter: "blur(0)",
+          },
+          {
+            opacity: 0,
+            transform: "translateY(10px) scale(0.975)",
+            filter: "blur(8px)",
+          },
         ],
         { duration: t, easing: "cubic-bezier(0.55, 0, 1, 0.45)" },
       ),
       r = () => {
         e.classList.contains("is-closing") &&
-          ((e.hidden = !0), e.classList.remove("is-closing"));
+          ((e.hidden = !0),
+          e.classList.remove("is-closing"),
+          document.querySelectorAll(".detail-layer:not([hidden])").length ||
+            document.body.classList.remove("has-open-dialog"));
       };
+    reduceMotion ||
+      e.animate([{ opacity: 1 }, { opacity: 0 }], {
+        duration: 300,
+        easing: "ease-in",
+      });
     n ? n.finished.then(r).catch(() => {}) : r();
   };
+document.querySelectorAll(".detail-layer").forEach((layer) => {
+  layer.addEventListener("click", (event) => {
+    if (event.target === layer) hideSurface(layer);
+  });
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape")
+    document
+      .querySelectorAll(".detail-layer:not([hidden])")
+      .forEach(hideSurface);
+});
+document
+  .querySelectorAll('.detail-layer a[href="#callback"]')
+  .forEach((link) =>
+    link.addEventListener("click", () =>
+      hideSurface(link.closest(".detail-layer")),
+    ),
+  );
 function initNewsCarousel() {
   const e = document.querySelector("[data-news-carousel]"),
     t = e?.querySelector("[data-news-track]"),
@@ -366,23 +417,46 @@ function initNewsCarousel() {
       hideSurface(reader);
     }),
   initNewsCarousel(),
-  document.querySelectorAll("[data-team-card]").forEach((e) => {
-    const t = [...e.querySelectorAll("[data-team-toggle]")],
-      n = e.querySelector(".team-profile");
-    t.forEach((e) =>
-      e.addEventListener("click", () => {
-        const e = n.hidden || !n.classList.contains("is-open");
-        (document.querySelectorAll(".team-profile").forEach((e) => {
-          e !== n && hideSurface(e);
-        }),
-          document.querySelectorAll("[data-team-toggle]").forEach((e) => {
-            t.includes(e) || e.setAttribute("aria-expanded", "false");
-          }),
-          e ? showSurface(n) : hideSurface(n),
-          t.forEach((t) => t.setAttribute("aria-expanded", String(e))));
+  document.querySelectorAll("[data-team-card]").forEach((card) => {
+    card.querySelectorAll("[data-team-toggle]").forEach((button) =>
+      button.addEventListener("click", () => {
+        const overlay = document.querySelector("[data-team-overlay]");
+        overlay.querySelector("[data-team-detail-name]").textContent =
+          card.dataset.teamName;
+        overlay.querySelector("[data-team-detail-role]").textContent =
+          card.dataset.teamRole;
+        overlay.querySelector("[data-team-detail-bio]").textContent =
+          card.dataset.teamBio;
+        const image = overlay.querySelector("[data-team-detail-image]");
+        image.src = card.dataset.teamImage;
+        image.alt = `${card.dataset.teamName}, ${card.dataset.teamRole}`;
+        showSurface(overlay);
       }),
     );
-  }));
+  }),
+  document
+    .querySelector("[data-team-close]")
+    ?.addEventListener("click", () =>
+      hideSurface(document.querySelector("[data-team-overlay]")),
+    ));
+const newsVideo = document.querySelector(".news-card-video"),
+  newsVideoToggle = document.querySelector("[data-news-video-toggle]");
+if (reduceMotion) newsVideo?.pause();
+newsVideoToggle?.addEventListener("click", () => {
+  if (!newsVideo) return;
+  const label = newsVideoToggle.lastChild;
+  if (newsVideo.paused) {
+    newsVideo.play();
+    label.textContent = "Видео без звука";
+    newsVideoToggle.setAttribute("aria-label", "Приостановить видео");
+    newsVideoToggle.classList.remove("is-paused");
+  } else {
+    newsVideo.pause();
+    label.textContent = "Видео на паузе";
+    newsVideoToggle.setAttribute("aria-label", "Продолжить видео");
+    newsVideoToggle.classList.add("is-paused");
+  }
+});
 const documentViewer = document.querySelector("[data-document-viewer]"),
   documentTitle = documentViewer?.querySelector("h3[data-document-title]"),
   documentKind = documentViewer?.querySelector("p[data-document-kind]"),
@@ -632,18 +706,3 @@ function initSiteCursor() {
   initHeroTrail(),
   initCallbackParticles(),
   initSiteCursor());
-
-const videoReader = document.querySelector("[data-video-reader]");
-document.querySelectorAll(".news-video-open").forEach((button) =>
-  button.addEventListener("click", () => {
-    showSurface(videoReader);
-    reduceMotion ||
-      videoReader.scrollIntoView({ behavior: "smooth", block: "center" });
-  }),
-);
-document
-  .querySelector("[data-video-reader-close]")
-  ?.addEventListener("click", () => {
-    videoReader?.querySelector("video")?.pause();
-    hideSurface(videoReader);
-  });
