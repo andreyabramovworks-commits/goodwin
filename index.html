@@ -1,0 +1,852 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f2f7fb" />
+    <meta
+      name="description"
+      content="Гудвин — клуб дрон-рейсинга: тренировки на симуляторе, FPV-пилотирование и техника."
+    />
+    <title>Гудвин — клуб дрон-рейсинга</title>
+    <link rel="icon" type="image/svg+xml" href="assets/gudvin-drone.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="brand.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">К содержанию</a>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    <canvas class="page-trail" data-page-trail aria-hidden="true"></canvas>
+    <div class="site-cursor" data-site-cursor aria-hidden="true">
+      <img src="assets/gudvin-drone.svg" alt="" width="52" height="34" />
+    </div>
+    <div class="club-opening" data-club-opening aria-label="Заставка Гудвин">
+      <div class="club-opening__sky" aria-hidden="true">
+        <span class="opening-sun"></span>
+        <span class="opening-cloud opening-cloud--one"></span>
+        <span class="opening-cloud opening-cloud--two"></span>
+        <span class="opening-cloud opening-cloud--three"></span>
+        <span class="opening-cloud opening-cloud--four"></span>
+        <span class="opening-cloud opening-cloud--five"></span>
+      </div>
+      <div class="club-opening__paper">
+        <img
+          class="club-opening__logo"
+          src="assets/gudvin-lockup.png"
+          alt="Гудвин — клуб дрон-рейсинга"
+          width="440"
+          height="149"
+        />
+        <span class="club-opening__line"></span>
+        <small>Время встречаться и пробовать новое</small>
+      </div>
+      <button type="button" class="club-opening__skip" data-opening-skip>
+        Пропустить
+      </button>
+    </div>
+    <header class="site-header" data-header>
+      <a class="brand" href="#top" aria-label="Гудвин, на главную">
+        <img
+          class="brand-logo"
+          src="assets/gudvin-lockup.png"
+          alt="Гудвин — клуб дрон-рейсинга"
+          width="280"
+          height="95"
+        />
+      </a>
+      <nav class="desktop-nav" aria-label="Основная навигация">
+        <a href="#about">О клубе</a> <a href="#schedule">Занятия</a>
+        <a href="#news">Новости</a> <a href="#team">Команда</a>
+        <a href="#documents">Документы</a>
+      </nav>
+      <a class="header-phone" href="tel:+79080116174">+7 (908) 011-61-74</a>
+      <button
+        class="menu-button"
+        type="button"
+        aria-label="Открыть меню"
+        aria-expanded="false"
+        data-menu-button
+      >
+        <span></span><span></span>
+      </button>
+    </header>
+    <nav class="mobile-menu" aria-label="Мобильная навигация" data-mobile-menu>
+      <a href="#about">О клубе</a><a href="#schedule">Занятия</a
+      ><a href="#news">Новости</a><a href="#team">Команда</a
+      ><a href="#documents">Документы</a>
+      <a class="mobile-call" href="tel:+79080116174"
+        >Позвонить: +7 (908) 011-61-74</a
+      >
+    </nav>
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+        <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+        <div class="container hero-grid">
+          <div class="hero-copy reveal-group">
+            <p class="hero-kicker">Клуб дрон-рейсинга</p>
+            <h1>Место, где хочется пробовать новое.</h1>
+            <p class="hero-text">
+              Учимся пилотировать FPV-дроны, разбираться в технике и уверенно
+              управлять полётом — от первого симулятора до собственной трассы.
+            </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#callback"
+                >Записаться на занятие <span aria-hidden="true">→</span></a
+              >
+              <a class="text-link" href="tel:+79080116174">или позвонить</a>
+            </div>
+          </div>
+          <div class="hero-visual reveal-image">
+            <div class="hero-photo-wrap" data-scroll-float>
+              <img src="assets/media/fpv-flight.jpg" alt="FPV-дрон в полёте" />
+            </div>
+            <aside class="welcome-note">
+              <span class="note-pin" aria-hidden="true"></span>
+              <strong>Первое занятие</strong>
+              <p>Познакомимся с техникой и начнём с безопасного симулятора.</p>
+            </aside>
+            <div class="scribble scribble-hero" aria-hidden="true">⌒</div>
+          </div>
+        </div>
+        <div class="hero-footer container">
+          <span>Техника, реакция и чистый азарт полёта</span>
+          <a href="#schedule"
+            >Посмотреть расписание <span aria-hidden="true">↓</span></a
+          >
+        </div>
+      </section>
+      <section class="intro section" id="about">
+        <div class="container intro-layout" data-scroll-stage>
+          <div class="intro-copy">
+            <div class="intro-stamp reveal-on-scroll">О клубе</div>
+            <h2 class="display reveal-on-scroll">
+              Дрон-рейсинг — клуб, где скорость становится навыком.
+            </h2>
+            <p class="large-copy reveal-on-scroll" data-scrub-reveal>
+              «Гудвин» — клуб дрон-рейсинга для тех, кто хочет не просто
+              посмотреть на FPV-полёт, а почувствовать его изнутри. Здесь
+              гоночный дрон становится понятной техникой: вы учитесь видеть
+              трассу глазами пилота, управлять скоростью и разбираться в каждой
+              детали своего аппарата.
+            </p>
+            <a class="text-link reveal-on-scroll" href="#schedule"
+              >Выбрать занятие <span aria-hidden="true">→</span></a
+            >
+          </div>
+          <div
+            class="about-visuals reveal-on-scroll"
+            aria-label="Занятия клуба дрон-рейсинга"
+          >
+            <figure class="about-visuals__main">
+              <img
+                src="assets/media/training-simulators.jpg"
+                alt="Участники занимаются на симуляторах"
+              />
+            </figure>
+            <figure class="about-visuals__inset">
+              <img
+                src="assets/media/soldering-workshop.jpg"
+                alt="Участник изучает электронику дрона"
+              />
+            </figure>
+            <p class="about-visuals__caption">
+              <b>Три понятных шага к своему первому кругу.</b
+              ><span
+                >Симулятор, работа с техникой и полётная практика — с
+                инструктором рядом.</span
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="schedule-section section" id="schedule">
+        <div class="container" data-scroll-stage>
+          <div class="section-heading">
+            <h2 class="display reveal-on-scroll">Расписание занятий</h2>
+            <p class="reveal-on-scroll">
+              Постоянные группы для тех, кто хочет освоить дрон-рейсинг.
+              Выберите день и оставьте заявку на удобное занятие.
+            </p>
+          </div>
+          <div class="schedule-shell reveal-on-scroll" data-no-trail>
+            <div class="days" role="tablist" aria-label="Дни недели">
+              <button
+                role="tab"
+                aria-selected="true"
+                aria-controls="day-tue"
+                id="tab-tue"
+                data-day="tue"
+              >
+                Вт<span>18:00–20:00</span>
+              </button>
+              <button
+                role="tab"
+                aria-selected="false"
+                aria-controls="day-thu"
+                id="tab-thu"
+                data-day="thu"
+              >
+                Чт<span>18:00–20:00</span>
+              </button>
+              <button
+                role="tab"
+                aria-selected="false"
+                aria-controls="day-sat"
+                id="tab-sat"
+                data-day="sat"
+              >
+                Сб<span>12:00–14:00</span>
+              </button>
+            </div>
+            <div class="schedule-board" data-schedule-board>
+              <div
+                class="schedule-list"
+                id="day-tue"
+                role="tabpanel"
+                aria-labelledby="tab-tue"
+                data-panel="tue"
+              >
+                <article class="lesson-card active">
+                  <time>18:00</time>
+                  <div>
+                    <span class="lesson-type">12+ <b>120 минут</b></span>
+                    <h3>Группа дрон-рейсинга</h3>
+                    <p>
+                      Симулятор, основы управления и разбор техники с
+                      инструктором.
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    class="lesson-action"
+                    aria-label="Записаться на занятие во вторник"
+                    data-scroll-form
+                    data-session="Вторник · 18:00–20:00"
+                  >
+                    Записаться <span aria-hidden="true">→</span>
+                  </button>
+                </article>
+              </div>
+              <div
+                class="schedule-list"
+                id="day-thu"
+                role="tabpanel"
+                aria-labelledby="tab-thu"
+                data-panel="thu"
+                hidden
+              >
+                <article class="lesson-card active">
+                  <time>18:00</time>
+                  <div>
+                    <span class="lesson-type">12+ <b>120 минут</b></span>
+                    <h3>Группа дрон-рейсинга</h3>
+                    <p>
+                      Практика на симуляторах, настройки и уверенное управление.
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    class="lesson-action"
+                    aria-label="Записаться на занятие в четверг"
+                    data-scroll-form
+                    data-session="Четверг · 18:00–20:00"
+                  >
+                    Записаться <span aria-hidden="true">→</span>
+                  </button>
+                </article>
+              </div>
+              <div
+                class="schedule-list"
+                id="day-sat"
+                role="tabpanel"
+                aria-labelledby="tab-sat"
+                data-panel="sat"
+                hidden
+              >
+                <article class="lesson-card active">
+                  <time>12:00</time>
+                  <div>
+                    <span class="lesson-type">12+ <b>120 минут</b></span>
+                    <h3>Группа дрон-рейсинга</h3>
+                    <p>
+                      Два часа для симулятора, полётной практики и вопросов по
+                      технике.
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    class="lesson-action"
+                    aria-label="Записаться на занятие в субботу"
+                    data-scroll-form
+                    data-session="Суббота · 12:00–14:00"
+                  >
+                    Записаться <span aria-hidden="true">→</span>
+                  </button>
+                </article>
+              </div>
+            </div>
+          </div>
+          <div class="schedule-note reveal-on-scroll">
+            <span>Не нашли подходящее время?</span
+            ><a href="#callback">Оставьте номер, подберём вариант</a>
+          </div>
+        </div>
+      </section>
+      <section class="news-section section" id="news">
+        <div class="container" data-scroll-stage>
+          <div class="section-heading heading-inline">
+            <h2 class="display reveal-on-scroll">
+              Дрон-рейсинг: из клуба и индустрии
+            </h2>
+            <a class="text-link reveal-on-scroll" href="#callback"
+              >Получать новости клуба</a
+            >
+          </div>
+          <div class="news-carousel" data-news-carousel data-no-trail>
+            <div class="news-viewport" data-news-viewport>
+              <div class="news-track" data-news-track>
+                <article
+                  class="news-feature"
+                  data-reveal-hover
+                  data-reveal-radius="220"
+                >
+                  <img
+                    class="reveal-hover__image reveal-hover__image--base"
+                    src="assets/media/fpv-gate-editorial.png"
+                    alt="Гоночный FPV-дрон проходит тренировочную рамку"
+                  />
+                  <img
+                    class="reveal-hover__image reveal-hover__image--overlay"
+                    src="assets/media/fpv-gate-editorial.png"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                  <div>
+                    <p>Техника</p>
+                    <h3>
+                      Почему гоночный FPV-дрон не похож на обычный квадрокоптер
+                    </h3>
+                    <button
+                      type="button"
+                      class="news-open"
+                      data-news-title="Почему гоночный FPV-дрон не похож на обычный квадрокоптер"
+                      data-news-date="Техника"
+                      data-news-body="Для дрон-рейсинга используют лёгкие и прочные FPV-квадрокоптеры: карбоновая рама, мощные моторы и небольшие пропеллеры помогают им быстро ускоряться и маневрировать. Такой дрон не стабилизируется сам — пилот управляет им вручную, поэтому важны реакция и чувство пространства."
+                    >
+                      Узнать детали <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
+                </article>
+                <article class="news-feature news-video-card">
+                  <img
+                    class="news-video-card__poster"
+                    src="assets/media/fpv-flight.jpg"
+                    alt="FPV-дрон в полёте"
+                  />
+                  <div>
+                    <p>Видео · кино</p>
+                    <h3>Как FPV-дроны меняют язык съёмки</h3>
+                    <button
+                      type="button"
+                      class="news-video-open news-video-card__action"
+                      data-news-title="Как FPV-дроны меняют язык съёмки"
+                      data-news-date="Видео · кино"
+                    >
+                      <span class="play-mark" aria-hidden="true">▶</span>
+                      Смотреть видео
+                    </button>
+                  </div>
+                </article>
+                <article class="news-brief news-coral news-brief--image">
+                  <img
+                    src="assets/media/competition-award.jpg"
+                    alt="Участница соревнований по дрон-рейсингу с кубком"
+                  />
+                  <div>
+                    <p>Спорт</p>
+                    <h3>В дрон-рейсинге решают навык и опыт</h3>
+                    <button
+                      type="button"
+                      class="news-open"
+                      data-news-title="В дрон-рейсинге решают навык и опыт"
+                      data-news-date="Спорт"
+                      data-news-body="Соревнования проходят на трассах с препятствиями, а пилоты видят полёт через FPV-очки в реальном времени. Для старта важнее интерес, тренировки на симуляторе и готовность разбираться в технике, чем дорогой набор с первого дня."
+                    >
+                      Посмотреть время <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
+                </article>
+                <article class="news-brief news-lavender news-brief--image">
+                  <img
+                    src="assets/media/fpv-pilot.jpg"
+                    alt="Участник занятия управляет дроном в FPV-очках"
+                  />
+                  <div>
+                    <p>Практика</p>
+                    <h3>Начинаем не с полёта, а с симулятора</h3>
+                    <button
+                      type="button"
+                      class="news-open"
+                      data-news-title="Начинаем не с полёта, а с симулятора"
+                      data-news-date="Практика"
+                      data-news-body="Управление дроном требует координации, быстрой реакции и понимания техники. На симуляторе можно спокойно освоить базовые движения, разобрать ошибки и подготовиться к первому реальному вылету без лишнего риска для техники."
+                    >
+                      Читать новость <span aria-hidden="true">→</span>
+                    </button>
+                  </div>
+                </article>
+                <article class="news-brief news-green">
+                  <p>Внутри клуба</p>
+                  <h3>Настройка — это часть полёта</h3>
+                  <button
+                    type="button"
+                    class="news-open"
+                    data-news-title="Настройка — это часть полёта"
+                    data-news-date="Внутри клуба"
+                    data-news-body="Время полёта гоночного FPV-дрона обычно измеряется минутами, поэтому пилоты внимательно относятся к каждой детали: аккумулятору, пропеллерам, настройкам и собственному стилю управления. В клубе это разбирают вместе с инструктором."
+                  >
+                    Читать новость <span aria-hidden="true">→</span>
+                  </button>
+                </article>
+                <article class="news-brief news-paper">
+                  <p>Запись открыта</p>
+                  <h3>Занятия проходят по вторникам, четвергам и субботам</h3>
+                  <button
+                    type="button"
+                    class="news-open"
+                    data-news-title="Занятия проходят по вторникам, четвергам и субботам"
+                    data-news-date="Запись открыта"
+                    data-news-body="Группа дрон-рейсинга собирается во вторник и четверг с 18:00 до 20:00, а также в субботу с 12:00 до 14:00. Оставьте номер — мы перезвоним и поможем выбрать подходящий слот."
+                  >
+                    Смотреть видео <span aria-hidden="true">→</span>
+                  </button>
+                </article>
+              </div>
+            </div>
+            <div class="news-carousel-footer">
+              <div class="news-carousel-controls" aria-label="Листать новости">
+                <button
+                  type="button"
+                  data-news-prev
+                  aria-label="Предыдущие новости"
+                >
+                  <svg aria-hidden="true" viewBox="0 0 24 24">
+                    <path d="m14.5 5-7 7 7 7"></path>
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  data-news-next
+                  aria-label="Следующие новости"
+                >
+                  <svg aria-hidden="true" viewBox="0 0 24 24">
+                    <path d="m9.5 5 7 7-7 7"></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <article
+            class="news-reader"
+            data-news-reader
+            hidden
+            aria-live="polite"
+          >
+            <button
+              type="button"
+              class="reader-close"
+              data-reader-close
+              aria-label="Закрыть новость"
+            >
+              ×
+            </button>
+            <p data-news-reader-date></p>
+            <h3 data-news-reader-title></h3>
+            <p data-news-reader-body></p>
+            <a class="button button-primary" href="#callback"
+              >Записаться на событие <span aria-hidden="true">→</span></a
+            >
+          </article>
+          <article
+            class="news-reader news-video-reader"
+            data-video-reader
+            hidden
+            aria-live="polite"
+          >
+            <button
+              type="button"
+              class="reader-close"
+              data-video-reader-close
+              aria-label="Закрыть видео"
+            >
+              ×
+            </button>
+            <p>Кино · FPV-полёт</p>
+            <h3>Дроны в кадре: скорость, траектория и точка зрения пилота</h3>
+            <p>
+              Посмотрите короткий ролик из жизни клуба. FPV-техника позволяет
+              камере двигаться вместе с действием и видеть привычные
+              пространства по-новому.
+            </p>
+            <div class="club-video">
+              <video-player>
+                <video-skin
+                  style="display: block; width: 100%; aspect-ratio: 16/9"
+                >
+                  <video
+                    src="assets/media/fpv-cinema.mp4"
+                    poster="assets/media/fpv-flight.jpg"
+                    playsinline
+                    preload="metadata"
+                    controls
+                  ></video>
+                </video-skin>
+              </video-player>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="team-section section" id="team">
+        <div class="container team-layout" data-scroll-stage>
+          <div>
+            <h2 class="display reveal-on-scroll">
+              Инструкторы, которые знают полёт изнутри
+            </h2>
+            <p class="reveal-on-scroll">
+              От первого движения на симуляторе до настроенного FPV-дрона —
+              рядом специалисты с соревновательным и техническим опытом.
+            </p>
+          </div>
+          <div class="team-list" data-no-trail data-scroll-stage>
+            <article class="team-member reveal-on-scroll" data-team-card>
+              <button
+                class="team-photo-button"
+                type="button"
+                data-team-toggle
+                aria-expanded="false"
+                aria-controls="profile-egor"
+              >
+                <img
+                  src="assets/media/egor-gazin.jpg"
+                  alt="Егор Газин, инструктор клуба Гудвин"
+                /><span>Открыть профиль</span>
+              </button>
+              <div>
+                <h3>Егор Газин</h3>
+                <p>Инструктор по мультироторным системам</p>
+              </div>
+              <button
+                class="team-expand"
+                type="button"
+                data-team-toggle
+                aria-expanded="false"
+                aria-controls="profile-egor"
+              >
+                Подробнее <span aria-hidden="true">+</span>
+              </button>
+              <div class="team-profile" id="profile-egor" hidden>
+                <p>
+                  Егор Дмитриевич Газин обучает управлению мультироторными
+                  системами разных классов, пайке и техническому обслуживанию
+                  БПЛА. Его основной фокус — гоночные дроны.
+                </p>
+                <a href="#callback"
+                  >Записаться на занятие <span aria-hidden="true">→</span></a
+                >
+              </div>
+            </article>
+            <article class="team-member reveal-on-scroll" data-team-card>
+              <button
+                class="team-photo-button"
+                type="button"
+                data-team-toggle
+                aria-expanded="false"
+                aria-controls="profile-artem"
+              >
+                <img
+                  src="assets/media/artem-seryshev.jpg"
+                  alt="Артём Серышев, старший инструктор клуба Гудвин"
+                /><span>Открыть профиль</span>
+              </button>
+              <div>
+                <h3>Артём Серышев</h3>
+                <p>Старший инструктор</p>
+              </div>
+              <button
+                class="team-expand"
+                type="button"
+                data-team-toggle
+                aria-expanded="false"
+                aria-controls="profile-artem"
+              >
+                Подробнее <span aria-hidden="true">+</span>
+              </button>
+              <div class="team-profile" id="profile-artem" hidden>
+                <p>
+                  Артём Игоревич Серышев — участник и призёр соревнований ФГДР.
+                  Работает с аппаратами всех габаритов: от лёгких гоночных
+                  моделей до тяжёлых многоосевых платформ.
+                </p>
+                <a href="#callback"
+                  >Записаться на занятие <span aria-hidden="true">→</span></a
+                >
+              </div>
+            </article>
+            <article class="team-member reveal-on-scroll" data-team-card>
+              <button
+                class="team-photo-button"
+                type="button"
+                data-team-toggle
+                aria-expanded="false"
+                aria-controls="profile-oleg"
+              >
+                <img
+                  src="assets/media/oleg-grinev.jpg"
+                  alt="Олег Гринев, инструктор клуба Гудвин"
+                /><span>Открыть профиль</span>
+              </button>
+              <div>
+                <h3>Олег Гринев</h3>
+                <p>Инструктор по спортивному пилотированию</p>
+              </div>
+              <button
+                class="team-expand"
+                type="button"
+                data-team-toggle
+                aria-expanded="false"
+                aria-controls="profile-oleg"
+              >
+                Подробнее <span aria-hidden="true">+</span>
+              </button>
+              <div class="team-profile" id="profile-oleg" hidden>
+                <p>
+                  Олег Дмитриевич Гринев — участник официальных соревнований
+                  ФГДР. Уверенно работает с БПЛА разного веса и размера,
+                  специализируется на гоночных моделях.
+                </p>
+                <a href="#callback"
+                  >Записаться на занятие <span aria-hidden="true">→</span></a
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="documents-section section" id="documents">
+        <div class="container documents-layout" data-scroll-stage>
+          <div class="reveal-on-scroll">
+            <h2 class="display">Документы</h2>
+            <p>
+              Актуальные версии документов появятся здесь перед стартом занятий.
+            </p>
+          </div>
+          <div
+            class="document-list reveal-on-scroll"
+            aria-label="Список документов"
+            data-no-trail
+            data-scroll-stage
+          >
+            <div>
+              <button
+                type="button"
+                class="document-open"
+                data-document-title="Правила посещения и безопасности полётов"
+                data-document-kind="Правила"
+              >
+                Правила посещения и безопасности полётов
+                <span>Открыть</span></button
+              ><button
+                type="button"
+                class="document-pdf"
+                data-document-pdf="Правила посещения и безопасности полётов"
+              >
+                PDF
+              </button>
+            </div>
+            <div>
+              <button
+                type="button"
+                class="document-open"
+                data-document-title="Согласие на участие в занятиях"
+                data-document-kind="Согласие"
+              >
+                Согласие на участие в занятиях <span>Открыть</span></button
+              ><button
+                type="button"
+                class="document-pdf"
+                data-document-pdf="Согласие на участие в занятиях"
+              >
+                PDF
+              </button>
+            </div>
+            <div>
+              <button
+                type="button"
+                class="document-open"
+                data-document-title="Политика обработки данных"
+                data-document-kind="Политика"
+              >
+                Политика обработки данных <span>Открыть</span></button
+              ><button
+                type="button"
+                class="document-pdf"
+                data-document-pdf="Политика обработки данных"
+              >
+                PDF
+              </button>
+            </div>
+          </div>
+        </div>
+        <article
+          class="document-viewer container"
+          data-document-viewer
+          data-no-trail
+          hidden
+          tabindex="-1"
+        >
+          <div class="document-sheet">
+            <button
+              type="button"
+              class="reader-close"
+              data-document-close
+              aria-label="Закрыть документ"
+            >
+              ×
+            </button>
+            <p data-document-kind></p>
+            <h3 data-document-title></h3>
+            <div class="document-copy">
+              <p>
+                Документ готовится к публикации. Здесь появится утверждённая
+                версия с реквизитами, датой обновления и полной формулировкой.
+              </p>
+              <h4>1. Общие положения</h4>
+              <p>
+                До публикации можно задать вопрос по телефону или оставить номер
+                для обратного звонка.
+              </p>
+              <h4>2. Важная информация</h4>
+              <p>
+                Мы заменим эту предварительную карточку на официальный текст,
+                когда он будет утверждён клубом.
+              </p>
+            </div>
+            <div class="document-actions">
+              <button
+                class="button button-dark"
+                type="button"
+                data-document-pdf
+              >
+                Скачать PDF <span aria-hidden="true">↓</span></button
+              ><a class="text-link" href="#callback">Задать вопрос</a>
+            </div>
+            <p class="document-feedback" role="status" aria-live="polite"></p>
+          </div>
+        </article>
+      </section>
+      <section class="callback section" id="callback">
+        <canvas
+          class="callback-particles"
+          data-callback-particles
+          aria-hidden="true"
+        ></canvas>
+        <div class="container callback-grid" data-scroll-stage>
+          <div class="callback-copy reveal-on-scroll">
+            <h2>Давайте познакомимся</h2>
+            <p>
+              Оставьте номер — расскажем, с чего начать, и поможем выбрать
+              группу. Или звоните сами: будем рады.
+            </p>
+            <a href="tel:+79080116174" class="callback-phone"
+              >+7 (908) 011-61-74</a
+            >
+          </div>
+          <form
+            class="callback-form reveal-on-scroll"
+            data-callback-form
+            data-no-trail
+          >
+            <label
+              >Как вас зовут<input
+                name="name"
+                autocomplete="name"
+                placeholder="Например, Ирина"
+                required
+            /></label>
+            <label
+              >Телефон<input
+                name="phone"
+                type="tel"
+                autocomplete="tel"
+                placeholder="+7 (___) ___-__-__"
+                required
+            /></label>
+            <label
+              >На какое занятие хотите записаться?<select
+                name="session"
+                data-session-select
+              >
+                <option value="">Выберите дату</option>
+                <option value="Вторник · 18:00–20:00">
+                  Вторник · 18:00–20:00
+                </option>
+                <option value="Четверг · 18:00–20:00">
+                  Четверг · 18:00–20:00
+                </option>
+                <option value="Суббота · 12:00–14:00">
+                  Суббота · 12:00–14:00
+                </option>
+              </select></label
+            >
+            <label
+              >Когда удобно позвонить?<select name="time">
+                <option>С 8:00 до 12:00</option>
+                <option>С 12:00 до 16:00</option>
+                <option>С 16:00 до 18:00</option>
+              </select></label
+            >
+            <p class="booking-choice" data-booking-choice>
+              Можно выбрать удобную дату в расписании выше.
+            </p>
+            <button class="button button-dark" type="submit">
+              Жду звонка <span aria-hidden="true">→</span>
+            </button>
+            <p class="form-caption">
+              Нажимая кнопку, вы соглашаетесь с политикой обработки данных.
+            </p>
+            <p class="form-success" role="status" aria-live="polite" hidden>
+              Спасибо! В демо-версии заявка не отправляется, но форма готова к
+              подключению.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container">
+        <a class="brand" href="#top"
+          ><img
+            class="brand-logo"
+            src="assets/gudvin-lockup.png"
+            alt="Гудвин — клуб дрон-рейсинга"
+            width="280"
+            height="95"
+        /></a>
+        <p>
+          Клуб дрон-рейсинга «Гудвин». Симулятор, техника и практика полёта.
+        </p>
+        <a href="#documents">Политика обработки данных</a>
+        <a
+          class="footer-developer"
+          href="https://t.me/sibiryakk0"
+          target="_blank"
+          rel="noreferrer"
+          >Разработчик сайта · @sibiryakk0</a
+        >
+      </div>
+    </footer>
+    <script type="module" src="video-player.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

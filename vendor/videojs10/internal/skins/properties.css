@@ -1,0 +1,11 @@
+@property --media-slider-fill {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 0%;
+}
+
+@property --media-slider-buffer {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 0%;
+}

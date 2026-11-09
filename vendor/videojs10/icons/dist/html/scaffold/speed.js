@@ -1,0 +1,4 @@
+//#region ../icons/dist/html/scaffold/speed.js
+const speedIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" fill=\"none\" aria-hidden=\"true\" viewBox=\"0 0 18 18\"><path stroke=\"currentColor\" d=\"M4.404 14.096a6.5 6.5 0 0 1 0-9.192 6.5 6.5 0 0 1 9.192 0 6.5 6.5 0 0 1 0 9.192M9 9.5 4.5 5\"/><circle cx=\"9\" cy=\"9.5\" r=\"1.5\" fill=\"currentColor\"/></svg>";
+//#endregion
+export { speedIcon };

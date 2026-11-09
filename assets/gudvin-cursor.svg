@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="50" height="48" viewBox="0 -8 100 96">
+<title>Гудвин — дрон-курсор, поворот 45 градусов влево. Точка нажатия: 10,8.</title>
+<desc>Треугольный нос слит с корпусом. Дым выходит из задней части: точка 34,32 в размере 50×48.</desc>
+<defs>
+  <linearGradient id="carbon" x2="0.8" y2="1"><stop stop-color="#46525c"/><stop offset=".45" stop-color="#090e13"/><stop offset="1" stop-color="#26343e"/></linearGradient>
+  <linearGradient id="metal" x2=".2" y2="1"><stop stop-color="#fff"/><stop offset=".32" stop-color="#a8b7c3"/><stop offset=".6" stop-color="#ecf3f7"/><stop offset="1" stop-color="#617481"/></linearGradient>
+  <linearGradient id="blue" x2=".7" y2="1"><stop stop-color="#9ce5ff"/><stop offset=".45" stop-color="#079cec"/><stop offset="1" stop-color="#005e9c"/></linearGradient>
+  <radialGradient id="lens"><stop stop-color="#122c40"/><stop offset=".6" stop-color="#02080d"/><stop offset=".82" stop-color="#007dbf"/><stop offset="1" stop-color="#101c27"/></radialGradient>
+  <g id="rotor">
+    <ellipse cy="3" rx="19" ry="11" fill="#0b1015" stroke="#f1f7fb" stroke-width="1.4"/>
+    <ellipse rx="18.4" ry="10.6" fill="url(#metal)" stroke="#101820" stroke-width="1.5"/>
+    <ellipse rx="15.1" ry="8.1" fill="#d4e2eb" stroke="#101820" stroke-width="1.5"/>
+    <path d="M0 0C-7-11-17-5-12-2L-2 2C3 12 17 5 12 2Z" fill="url(#blue)"/>
+    <path d="M-14-3Q-6-9 2-5M3 6Q10 8 14 2" fill="none" stroke="#fff" stroke-width=".8" opacity=".8"/>
+    <ellipse cy="1.5" rx="3.6" ry="2.8" fill="#0c1821"/>
+    <ellipse cy="-1" rx="3.6" ry="2.3" fill="url(#metal)" stroke="#111c26"/>
+    <ellipse cy="-1.3" rx="1.5" ry=".9" fill="#079cec"/>
+  </g>
+</defs>
+<g transform="rotate(-45 48 36)">
+
+
+<path d="M44 24 23 21M52 24 73 21M43 40 22 51M53 40 74 51" stroke="#121a22" stroke-width="6" stroke-linecap="round"/>
+<path d="M44 23 23 20M52 23 73 20M43 39 22 50M53 39 74 50" stroke="#8b9da9" stroke-width="1.4"/>
+<use href="#rotor" x="21" y="25"/>
+<use href="#rotor" x="75" y="25"/>
+<path d="M39 20Q48 16 57 20L59 46 52 57H44L37 46Z" fill="url(#carbon)" stroke="#e4edf4" stroke-width="1.5"/>
+<!-- Integrated nose: a single triangular extension of the carbon body. -->
+<path d="M48-4 36 23Q48 27 60 23Z" fill="url(#carbon)" stroke="#f1f7fb" stroke-width="1.8" stroke-linejoin="round"/>
+<path d="M48 1 40 20" fill="none" stroke="#079cec" stroke-width="1.8" stroke-linecap="round"/>
+<path d="M42 22H54L55 33H41Z" fill="url(#metal)" stroke="#111c26" stroke-width="1.3"/>
+<path d="M44 24H52V30H44Z" fill="#293943"/>
+<path d="M37 29Q33 27 35 22M59 29Q63 27 61 22" fill="none" stroke="#087db7" stroke-width="2"/>
+<use href="#rotor" x="20" y="51"/>
+<use href="#rotor" x="76" y="51"/>
+<!-- Front-facing FPV camera, as in the supplied mark. -->
+<path d="M37 34H59L61 52 57 58H39L35 52Z" fill="url(#metal)" stroke="#111c26" stroke-width="1.7" stroke-linejoin="round"/>
+<g fill="#111c26"><circle cx="39" cy="37" r="1.4"/><circle cx="57" cy="37" r="1.4"/><circle cx="39" cy="54" r="1.4"/><circle cx="57" cy="54" r="1.4"/></g>
+<circle cx="48" cy="46" r="9.2" fill="#090f15" stroke="#eef7ff" stroke-width="1.2"/>
+<circle cx="48" cy="46" r="7.2" fill="url(#lens)" stroke="#465e70"/>
+<path d="M43.5 43.5A5.5 5.5 0 0 1 49 40.5" fill="none" stroke="#25b8ff" stroke-width="1.7" stroke-linecap="round"/>
+<ellipse cx="46.2" cy="43.3" rx="1.5" ry="2" fill="#b9efff" transform="rotate(35 46.2 43.3)"/>
+<path d="M43 59V64H47M53 59V64H49" fill="none" stroke="#192631" stroke-width="2.5" stroke-linejoin="round"/>
+</g></svg>

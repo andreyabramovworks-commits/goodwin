@@ -1,0 +1,6 @@
+node_modules/
+vendor/plyr/
+vendor/videojs/
+.DS_Store
+Thumbs.db
+

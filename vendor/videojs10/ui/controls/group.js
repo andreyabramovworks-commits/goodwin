@@ -1,0 +1,22 @@
+import { ContextPartElement } from "../context-part-element.js";
+import { controlsContext } from "./context.js";
+import { ContextConsumer } from "@videojs/element/context";
+//#region src/ui/controls/group.ts
+var ControlsGroupElement = class extends ContextPartElement {
+	constructor(..._args) {
+		super(..._args);
+		this.consumer = new ContextConsumer(this, {
+			context: controlsContext,
+			subscribe: true
+		});
+	}
+	static {
+		this.tagName = "media-controls-group";
+	}
+	connectedCallback() {
+		super.connectedCallback();
+		if (this.hasAttribute("aria-label") || this.hasAttribute("aria-labelledby")) this.setAttribute("role", "group");
+	}
+};
+//#endregion
+export { ControlsGroupElement };

@@ -1,0 +1,117 @@
+/* Goodwin v5 — supplied logo, ice blue, graphite and silver. */
+:root {
+  --brand-blue: #079cec;
+  --brand-blue-dark: #0069a6;
+  --brand-graphite: #192631;
+}
+::selection { background: #b7e3fc; color: #192631; }
+html { scrollbar-color: #7298b1 #e7f1f7; }
+input, select { caret-color: var(--brand-blue-dark); }
+:focus-visible { outline: 3px solid var(--brand-blue-dark); outline-offset: 5px; }
+body::before { opacity: .08; }
+.brand { gap: 6px; flex-shrink: 0; }
+.brand img { display: block; object-fit: contain; }
+.brand-logo { width: 132px; height: 132px; }
+.site-header { height: 156px; }
+.brand { padding: 12px 8px; }
+.hero { min-height: calc(100dvh - 156px); }
+.hero-grid { min-height: calc(100dvh - 290px); }
+.site-footer { background: #dfebf3; color: #192631; padding: 40px 0; }
+.site-footer .container { grid-template-columns: 180px 1fr auto; gap: 46px; }
+.site-footer .brand { width: fit-content; padding: 0; }
+.site-footer .brand-logo { width: 164px; height: 164px; }
+.site-footer p, .site-footer a:last-child { color: #435c6f; }
+@media (max-width: 900px) {
+  .mobile-menu { top: 156px; }
+  .hero-grid { min-height: auto; }
+  .site-footer .container { grid-template-columns: 164px 1fr; gap: 24px 36px; }
+  .site-footer .container > a:last-child { grid-column: 2; }
+}
+@media (max-width: 620px) {
+  .site-header { height: 128px; }
+  .brand { padding: 8px 4px; }
+  .brand-logo { width: 112px; height: 112px; }
+  .mobile-menu { top: 128px; }
+  .hero { min-height: auto; }
+  .site-footer .container { grid-template-columns: 1fr; gap: 24px; }
+  .site-footer .container > a:last-child { grid-column: auto; }
+  .site-footer .brand-logo { width: 148px; height: 148px; }
+}
+.button-primary { color: #fff; background: #0079bd; }
+.button-primary:hover { background: #0069a6; }
+.news-brief.news-lavender { background: #91b9d4; }
+.news-brief.news-green { background: #243d50; color: #fff; }
+.news-brief.news-paper { background: #dfebf3; }
+.desktop-nav a:hover, .header-phone:hover, .text-link:hover,
+.document-open:hover, .mobile-call, .lesson-type b { color: var(--brand-blue-dark); }
+.site-cursor { width: 52px; height: 38px; border: 0; border-radius: 0;
+  background: transparent; filter: drop-shadow(0 3px 2px #19263140);
+  transform: translate3d(var(--cursor-x),var(--cursor-y),0) translate(-50%,-50%) scale(.7);
+  transition: opacity .16s, transform .12s ease-out; }
+.site-cursor img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.site-cursor.is-visible { transform: translate3d(var(--cursor-x),var(--cursor-y),0) translate(-50%,-50%) scale(1); }
+.site-cursor.is-action { background: transparent;
+  transform: translate3d(var(--cursor-x),var(--cursor-y),0) translate(-50%,-50%) rotate(-8deg) scale(1.18); }
+.club-opening__paper { padding: 30px 48px 32px; }
+.club-opening__logo { width: 280px; height: 280px; display: block; object-fit: contain; }
+.club-opening.is-ready .club-opening__logo { animation: opening-logo .85s var(--ease-out) both; }
+@keyframes opening-logo {
+  from { opacity: 0; transform: translateY(16px) scale(.88); filter: blur(5px); }
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+.club-opening__line { background: var(--brand-blue); margin-top: 12px; }
+.club-opening__paper small { max-width: 28ch; }
+.scroll-progress span { background: linear-gradient(90deg,#0069a6,#079cec,#9bdcff); }
+.callback-form input::placeholder { color: #617280; }
+@media (max-width: 620px) {
+  .club-opening__paper { padding: 26px 24px 30px; }
+  .club-opening__logo { width: min(66vw,260px); height: min(66vw,260px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .club-opening__logo { animation: none !important; }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  html:has(body.has-custom-cursor), body.has-custom-cursor,
+  body.has-custom-cursor *, body.has-custom-cursor *::before,
+  body.has-custom-cursor *::after { cursor: url('assets/gudvin-cursor.svg') 10 8, none !important; }
+}
+
+/* Native SVG cursor: its tip is the exact click point, with no tracking lag. */
+.site-cursor { display: none !important; }
+
+/* Unified horizontal racing lockup: one transparent image, original identity. */
+.brand { padding: 10px 0; }
+.brand-logo { width: 280px; height: auto; aspect-ratio: 2172 / 724; }
+.site-header { height: 116px; gap: 24px; }
+.desktop-nav { gap: 20px; }
+.hero { min-height: calc(100dvh - 116px); }
+.hero-grid { min-height: calc(100dvh - 250px); }
+.site-footer .container { grid-template-columns: 300px 1fr auto; gap: 36px; }
+.site-footer .brand-logo { width: 300px; height: auto; }
+.club-opening__paper { width: min(90vw,560px); padding: 50px 38px 38px; border-radius: 32px 64px 36px 56px; }
+.club-opening__logo { width: 440px; max-width: 100%; height: auto; aspect-ratio: 2172 / 724; }
+@media (max-width: 1080px) and (min-width: 901px) {
+  .brand-logo { width: 240px; }
+  .desktop-nav { gap: 12px; font-size: 12px; }
+  .site-header { gap: 16px; }
+}
+@media (max-width: 900px) {
+  .mobile-menu { top: 116px; }
+  .hero-grid { min-height: auto; }
+  .site-footer .container { grid-template-columns: 280px 1fr; gap: 24px 32px; }
+  .site-footer .container > a:last-child { grid-column: 2; }
+  .site-footer .brand-logo { width: 280px; }
+}
+@media (max-width: 620px) {
+  .site-header { height: 100px; }
+  .brand-logo { width: 238px; height: auto; }
+  .mobile-menu { top: 100px; }
+  .hero { min-height: auto; }
+  .site-footer .container { grid-template-columns: 1fr; gap: 24px; }
+  .site-footer .container > a:last-child { grid-column: auto; }
+  .site-footer .brand-logo { width: 280px; max-width: 100%; }
+  .club-opening__paper { padding: 34px 24px 30px; }
+  .club-opening__logo { width: 100%; height: auto; }
+}
+@media (max-width: 360px) { .brand-logo { width: 214px; } }

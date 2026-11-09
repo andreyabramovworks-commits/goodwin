@@ -1,0 +1,4 @@
+//#region ../icons/dist/html/scaffold/fullscreen-enter.js
+const fullscreenEnterIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"18\" height=\"18\" fill=\"none\" aria-hidden=\"true\" viewBox=\"0 0 18 18\"><path stroke=\"currentColor\" d=\"m11.5 6.5 4-4m-4 0h4v4m-9 5-4 4m0-4v4h4\"/></svg>";
+//#endregion
+export { fullscreenEnterIcon };

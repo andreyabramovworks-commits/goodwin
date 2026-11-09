@@ -1,0 +1,10 @@
+import { i18nContext } from "./context.js";
+import { I18nController } from "./controller.js";
+import { resolvePlayerLocale, resolveProviderLocale } from "./locale.js";
+import { I18nProviderElement, I18nProviderMixin } from "./provider-element.js";
+import { I18nTextMixin, MediaTextElement as TextElement } from "../ui/text/element.js";
+import "../define/i18n.js";
+import { createI18n } from "./create-i18n.js";
+import { renderText } from "./render-text.js";
+import { LOCALES, createTranslator, findLocaleKeys, getI18nTranslations, getLocaleKey, hasRegisteredLocale, isText, loadLocale, onI18nRegistryChange, registerI18n, resolveTranslation, translateText } from "@videojs/core/i18n";
+export { I18nController, I18nProviderElement, I18nProviderMixin, I18nTextMixin, LOCALES, I18nProviderElement as MediaI18nProviderElement, TextElement as MediaTextElement, i18nContext as context, createI18n, createTranslator, findLocaleKeys, getI18nTranslations, getLocaleKey, hasRegisteredLocale, i18nContext, isText, loadLocale, onI18nRegistryChange, registerI18n, renderText, resolvePlayerLocale, resolveProviderLocale, resolveTranslation, translateText };

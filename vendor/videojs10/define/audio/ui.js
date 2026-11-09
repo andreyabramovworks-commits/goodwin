@@ -1,0 +1,35 @@
+import { I18nProviderElement } from "../../i18n/provider-element.js";
+import { safeDefine } from "../../registration/safe-define.js";
+import { MediaTextElement as TextElement } from "../../ui/text/element.js";
+import { BufferingIndicatorElement } from "../../ui/buffering-indicator/element.js";
+import { ContainerElement } from "../../ui/container/element.js";
+import { GestureElement } from "../../ui/gesture/element.js";
+import { HotkeyElement } from "../../ui/hotkey/element.js";
+import { LiveButtonElement } from "../../ui/live-button/element.js";
+import { MuteButtonElement } from "../../ui/mute-button/element.js";
+import { PlayButtonElement } from "../../ui/play-button/element.js";
+import { PlaybackRateButtonElement } from "../../ui/playback-rate-button/element.js";
+import { PlaybackRateRadioGroupElement } from "../../ui/playback-rate-radio-group/element.js";
+import { PopoverElement } from "../../ui/popover/element.js";
+import { SeekButtonElement } from "../../ui/seek-button/element.js";
+import { defineErrorDialog, defineMenu, defineSliders, defineTime, defineTooltip } from "../../registration/ui-compounds.js";
+//#region src/define/audio/ui.ts
+safeDefine(ContainerElement);
+safeDefine(I18nProviderElement);
+defineErrorDialog();
+defineSliders();
+defineTime();
+defineMenu();
+defineTooltip();
+safeDefine(GestureElement);
+safeDefine(HotkeyElement);
+safeDefine(BufferingIndicatorElement);
+safeDefine(LiveButtonElement);
+safeDefine(MuteButtonElement);
+safeDefine(PlayButtonElement);
+safeDefine(PlaybackRateButtonElement);
+safeDefine(PlaybackRateRadioGroupElement);
+safeDefine(PopoverElement);
+safeDefine(SeekButtonElement);
+safeDefine(TextElement);
+//#endregion

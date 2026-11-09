@@ -1,0 +1,30 @@
+import { applyStateDataAttrs } from "@videojs/core/dom";
+//#region src/ui/input-indicator/live-indicator.ts
+var LiveIndicator = class {
+	#host;
+	#dataAttrs;
+	#render;
+	constructor(options) {
+		this.#host = options.host;
+		this.#dataAttrs = options.dataAttrs;
+		this.#render = options.render;
+	}
+	get element() {
+		return this.#host;
+	}
+	render(state) {
+		this.#host.hidden = false;
+		applyStateDataAttrs(this.#host, state, this.#dataAttrs);
+		this.#render(this.#host, state);
+		return this.#host;
+	}
+	remove() {
+		this.#host.hidden = true;
+		for (const key in this.#dataAttrs) {
+			const name = this.#dataAttrs[key];
+			if (name) this.#host.removeAttribute(name);
+		}
+	}
+};
+//#endregion
+export { LiveIndicator };

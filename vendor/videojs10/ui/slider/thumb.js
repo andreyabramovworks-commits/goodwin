@@ -1,0 +1,40 @@
+import { UIElement } from "../ui-element.js";
+import { sliderContext } from "./context.js";
+import { applyElementProps, applyStateDataAttrs } from "@videojs/core/dom";
+import { ContextConsumer } from "@videojs/element/context";
+//#region src/ui/slider/thumb.ts
+var SliderThumbElement = class extends UIElement {
+	static {
+		this.tagName = "media-slider-thumb";
+	}
+	#ctx = new ContextConsumer(this, {
+		context: sliderContext,
+		subscribe: true
+	});
+	#disconnect = null;
+	#thumbPropsApplied = false;
+	connectedCallback() {
+		super.connectedCallback();
+		this.#disconnect = new AbortController();
+		this.#thumbPropsApplied = false;
+	}
+	disconnectedCallback() {
+		super.disconnectedCallback();
+		this.#disconnect?.abort();
+		this.#disconnect = null;
+		this.#thumbPropsApplied = false;
+	}
+	update(_changed) {
+		super.update(_changed);
+		const ctx = this.#ctx.value;
+		if (!ctx) return;
+		if (!this.#thumbPropsApplied && this.#disconnect) {
+			applyElementProps(this, ctx.thumbProps, { signal: this.#disconnect.signal });
+			this.#thumbPropsApplied = true;
+		}
+		applyElementProps(this, ctx.thumbAttrs);
+		applyStateDataAttrs(this, ctx.state, ctx.stateAttrMap);
+	}
+};
+//#endregion
+export { SliderThumbElement };

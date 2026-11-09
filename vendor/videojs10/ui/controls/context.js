@@ -1,0 +1,4 @@
+import { createContext } from "@videojs/element/context";
+const controlsContext = createContext(Symbol("@videojs/controls"));
+//#endregion
+export { controlsContext };
