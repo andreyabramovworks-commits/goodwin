@@ -152,8 +152,12 @@
       ],
       "format": "esm"
     },
+    "content/stories.json": {
+      "bytes": 16729,
+      "imports": []
+    },
     "src/enhancements.jsx": {
-      "bytes": 9914,
+      "bytes": 9552,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -174,6 +178,11 @@
           "path": "src/react-bits/Aurora.jsx",
           "kind": "import-statement",
           "original": "./react-bits/Aurora.jsx"
+        },
+        {
+          "path": "content/stories.json",
+          "kind": "import-statement",
+          "original": "../content/stories.json"
         },
         {
           "path": "node_modules/react/jsx-runtime.js",
@@ -228,7 +237,7 @@
           "bytesInOutput": 51
         },
         "src/enhancements.jsx": {
-          "bytesInOutput": 9111
+          "bytesInOutput": 8488
         },
         "src/react-bits/CircularCarousel.jsx": {
           "bytesInOutput": 18703
@@ -241,9 +250,12 @@
         },
         "src/react-bits/Aurora.css": {
           "bytesInOutput": 0
+        },
+        "content/stories.json": {
+          "bytesInOutput": 40996
         }
       },
-      "bytes": 261670
+      "bytes": 302043
     },
     "assets/enhancements.css": {
       "imports": [],

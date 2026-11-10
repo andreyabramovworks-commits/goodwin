@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import {createRoot} from 'react-dom/client';
 import CircularCarousel from './react-bits/CircularCarousel.jsx';
 import Aurora from './react-bits/Aurora.jsx';
+import stories from '../content/stories.json';
 
 function useReducedMotion() {
   const [reduced,setReduced]=useState(()=>matchMedia('(prefers-reduced-motion: reduce)').matches);
@@ -14,19 +15,7 @@ function useNarrow() {
   return narrow;
 }
 const fallback=document.querySelector('[data-news-track]');
-const extraImages=['assets/media/club-equipment.jpg','assets/media/training-simulators.jpg'];
-const items=[...fallback.children].map((card,index)=>{
-  const button=card.querySelector('.news-open');
-  const video=card.querySelector('video');
-  return {
-    src:card.querySelector('img')?.getAttribute('src') || video?.getAttribute('poster') || extraImages[index-4],
-    alt:card.querySelector('img')?.getAttribute('alt') || card.querySelector('h3').textContent.trim(),
-    title:button?.dataset.newsTitle || card.querySelector('h3').textContent.trim(),
-    subtitle:button?.dataset.newsDate || 'Видео · кино',
-    body:button?.dataset.newsBody || 'FPV-дрон позволяет вести съёмку изнутри движения. Посмотрите материал о динамичной FPV-съёмке.',
-    video:video?.getAttribute('src')
-  };
-});
+const items=stories.map(item=>({...item,body:item.lead}));
 function openStory(item,trigger) {
   const dialog=document.querySelector('[data-news-reader]');
   const content=dialog.querySelector('.dialog-content');
@@ -39,7 +28,14 @@ function openStory(item,trigger) {
   }
   dialog.querySelector('[data-news-reader-title]').textContent=item.title;
   dialog.querySelector('[data-news-reader-date]').textContent=item.subtitle;
-  dialog.querySelector('[data-news-reader-body]').textContent=item.body;
+  const article=dialog.querySelector('[data-news-reader-body]');
+  article.replaceChildren();
+  const lead=document.createElement('p');lead.className='article-lead';lead.textContent=item.lead;article.append(lead);
+  item.sections.forEach(section=>{
+    const h=document.createElement('h4');h.textContent=section.heading;
+    const p=document.createElement('p');p.textContent=section.text;
+    article.append(h,p);
+  });
   dialog.querySelector('.story-media')?.remove();
   const media=document.createElement(item.video?'video':'img');
   media.className='story-media';
@@ -67,7 +63,7 @@ function NewsExperience() {
   const goTo=index=>{setPlaying(false);if(reduced||narrow){setActive(index);const track=rail.current;const card=track?.children[index];if(card)track.scrollTo({left:card.offsetLeft-track.offsetLeft-(track.clientWidth-card.offsetWidth)/2,behavior:reduced?'instant':'smooth'});}else api.current?.goTo(index);};
   return <div className={'news-orbit'+(reduced?' is-reduced':'')} ref={host}>
     {reduced?<div className="news-static-strip">{items.map((item,index)=><button key={index} className={'news-static-item'+(active===index?' is-active':'')} onClick={()=>setActive(index)} aria-pressed={active===index}><img src={item.src} alt=""/><span>{item.title}</span></button>)}</div>:
-    narrow?<div className="news-mobile-gallery" ref={rail} onScroll={e=>{const el=e.currentTarget;const index=Math.round(el.scrollLeft/(el.children[0]?.offsetWidth+16));setActive(Math.min(items.length-1,Math.max(0,index)))}}>{items.map((item,index)=><button key={index} aria-label={item.title} onClick={e=>openStory(item,e.currentTarget)}><img src={item.src} alt={item.alt}/><span>{item.subtitle}</span></button>)}</div>:
+    narrow?<div className="news-mobile-gallery" ref={rail} onScroll={e=>{const el=e.currentTarget;const index=Math.round(el.scrollLeft/(el.children[0]?.offsetWidth+16));setActive(Math.min(items.length-1,Math.max(0,index)))}}>{items.map((item,index)=><button key={index} aria-label={item.title} onClick={e=>openStory(item,e.currentTarget)}><img src={item.src} alt={item.alt}/><span>{item.title}</span></button>)}</div>:
     <div className="news-orbit-stage"><CircularCarousel items={items} apiRef={api} preset="orbit" intro="rise" cardWidth={360} aspectRatio={.9} gap={38} tilt={-8} perspective={1800} curve={0} autoplay={playing?'drift':'off'} speed={3} momentum={.35} parallax={.06} stretch={0} depthFade={.76} innerShade={.75} cornerRadius={14} fadeColor="#edf6fb" onChange={setActive} onItemClick={select}/></div>}
     <div className="orbit-navigation" aria-label="Управление каруселью">
       <div className="orbit-arrows">
@@ -78,7 +74,7 @@ function NewsExperience() {
     </div>
     <div className="orbit-story" aria-live="polite" aria-atomic="true">
       <div className="orbit-story-main"><p className="orbit-topic">{current.subtitle}</p><h3>{current.title}</h3></div>
-      <div className="orbit-story-copy"><p>{current.body}</p><button className="story-open" onClick={e=>{setPlaying(false);openStory(current,e.currentTarget)}}>{current.video?'Смотреть видео':'Читать материал'}</button></div>
+      <div className="orbit-story-copy"><p>{current.lead}</p><button className="story-open" onClick={e=>{setPlaying(false);openStory(current,e.currentTarget)}}>{current.kind==='caption'?'Открыть фотозаметку':current.video?'Читать и смотреть':'Читать статью'}</button></div>
     </div>
     
   </div>;

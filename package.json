@@ -1,11 +1,12 @@
 {
   "name": "goodwin-drone-racing-club",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "private": true,
   "description": "Статический сайт клуба дрон-рейсинга «Гудвин».",
   "scripts": {
-    "start": "npx --yes http-server . -p 4177 -c-1",
-    "build": "node scripts/build.mjs"
+    "start": "npx --yes http-server . -p 4178 -c-1",
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check-content.mjs"
   },
   "dependencies": {
     "react": "19.3.1",

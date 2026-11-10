@@ -37,3 +37,11 @@ Existing repository media, font references, brand assets and developer attributi
 - Native WebGL2, no additional dependencies. Adaptation: 30 fps cap, DPR 1, two slow blue layers, one viewport canvas. React wrapper removes it on mobile/reduced motion and pauses it during dialogs. Built-in visibility cleanup retained; CSS atmosphere remains if WebGL is unavailable.
 - React Bits GlassSurface official local source reviewed: `src/content/Components/GlassSurface/GlassSurface.jsx` and `.css`. Its CSS fallback/sheen/rim principles inform `polish.css`; the shader and component runtime are not installed. Text uses a separate legible reading surface.
 - Both references use the retained MIT + Commons Clause notice in `src/react-bits/LICENSE.md`. This is a finished site adaptation, not a component library.
+
+## Manrope local font, v7
+- Source: https://github.com/google/fonts/tree/main/ofl/manrope
+- Original variable TTF: https://raw.githubusercontent.com/google/fonts/main/ofl/manrope/Manrope%5Bwght%5D.ttf
+- Cyrillic/Latin subsets and 200–800 variable weights verified in official METADATA.pb on 2026-11-10.
+- Local unmodified font: `assets/fonts/Manrope-Variable.ttf`; SHA256 `3AE11C49DB0455A3CC33E37D380F20FDB8C7F8B41DC07625C177E3D87A9D6AE6`.
+- SIL Open Font License 1.1; retained `assets/fonts/OFL-Manrope.txt`.
+- No font package or CDN request. CSS @font-face uses font-display: swap. The preceding Google Fonts @import was removed in v7.

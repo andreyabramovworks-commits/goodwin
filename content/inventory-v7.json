@@ -1,0 +1,1532 @@
+[
+  {
+    "id": 0,
+    "section": "global",
+    "tag": "A",
+    "selector": "a.skip-link",
+    "text": "К содержанию",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 2,
+    "section": "global",
+    "tag": "A",
+    "selector": "a.brand",
+    "text": "",
+    "aria": "Гудвин, на главную",
+    "visible": true
+  },
+  {
+    "id": 3,
+    "section": "global",
+    "tag": "IMG",
+    "selector": "img.brand-logo",
+    "text": "Гудвин — клуб дрон-рейсинга",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 4,
+    "section": "desktop-nav",
+    "tag": "A",
+    "selector": "a.",
+    "text": "О клубе",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 5,
+    "section": "desktop-nav",
+    "tag": "A",
+    "selector": "a.",
+    "text": "Занятия",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 6,
+    "section": "desktop-nav",
+    "tag": "A",
+    "selector": "a.",
+    "text": "Новости",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 7,
+    "section": "desktop-nav",
+    "tag": "A",
+    "selector": "a.",
+    "text": "Команда",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 8,
+    "section": "desktop-nav",
+    "tag": "A",
+    "selector": "a.",
+    "text": "Документы",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 9,
+    "section": "global",
+    "tag": "A",
+    "selector": "a.header-phone",
+    "text": "+7 (908) 011-61-74",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 10,
+    "section": "global",
+    "tag": "BUTTON",
+    "selector": "button.menu-button",
+    "text": "",
+    "aria": "Открыть меню",
+    "visible": false
+  },
+  {
+    "id": 11,
+    "section": "mobile-menu",
+    "tag": "A",
+    "selector": "a.",
+    "text": "О клубе",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 12,
+    "section": "mobile-menu",
+    "tag": "A",
+    "selector": "a.",
+    "text": "Занятия",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 13,
+    "section": "mobile-menu",
+    "tag": "A",
+    "selector": "a.",
+    "text": "Новости",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 14,
+    "section": "mobile-menu",
+    "tag": "A",
+    "selector": "a.",
+    "text": "Команда",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 15,
+    "section": "mobile-menu",
+    "tag": "A",
+    "selector": "a.",
+    "text": "Документы",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 16,
+    "section": "mobile-menu",
+    "tag": "A",
+    "selector": "a.mobile-call",
+    "text": "Позвонить: +7 (908) 011-61-74",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 17,
+    "section": "top",
+    "tag": "H1",
+    "selector": "h1.",
+    "text": "Учитесь пилотировать FPV-дроны",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 18,
+    "section": "top",
+    "tag": "P",
+    "selector": "p.hero-text",
+    "text": "Занятия по дрон-рейсингу в «Гудвине»: осваиваем ручное FPV-пилотирование, тренируемся на симуляторе и разбираемся в технике вместе с инструктором. Можно начать с нуля.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 19,
+    "section": "top",
+    "tag": "A",
+    "selector": "a.button.button-primary",
+    "text": "Выбрать занятие",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 20,
+    "section": "top",
+    "tag": "A",
+    "selector": "a.text-link",
+    "text": "Позвонить",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 21,
+    "section": "top",
+    "tag": "SPAN",
+    "selector": "span.",
+    "text": "Вт и Чт · 18:00 / Сб · 12:00",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 22,
+    "section": "top",
+    "tag": "A",
+    "selector": "a.",
+    "text": "Выбрать время",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 23,
+    "section": "top",
+    "tag": "IMG",
+    "selector": "img.",
+    "text": "FPV-дрон в полёте",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 24,
+    "section": "top",
+    "tag": "P",
+    "selector": "p.",
+    "text": "FPV-очки показывают изображение с камеры дрона. Движение задаёт пилот.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 25,
+    "section": "about",
+    "tag": "H2",
+    "selector": "h2.display.reveal-on-scroll",
+    "text": "Управление, техника и практика с инструктором",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 26,
+    "section": "about",
+    "tag": "P",
+    "selector": "p.large-copy.reveal-on-scroll",
+    "text": "В ручном FPV-полёте пилот сам задаёт направление, высоту и скорость. На занятиях разбираем, как движения пульта меняют полёт, и учимся понимать отклик аппарата. Инструктор помогает разобраться с командами и настройками.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 27,
+    "section": "about",
+    "tag": "A",
+    "selector": "a.text-link.reveal-on-scroll",
+    "text": "Выбрать занятие",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 28,
+    "section": "about",
+    "tag": "IMG",
+    "selector": "img.",
+    "text": "Участники занимаются на симуляторах",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 29,
+    "section": "about",
+    "tag": "IMG",
+    "selector": "img.",
+    "text": "Участник изучает электронику дрона",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 30,
+    "section": "about",
+    "tag": "P",
+    "selector": "p.about-visuals__caption",
+    "text": "За полётом стоит практика.Управление, настройки и вопросы, которые проще разобрать рядом с инструктором.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 31,
+    "section": "schedule",
+    "tag": "H2",
+    "selector": "h2.display.reveal-on-scroll",
+    "text": "Расписание занятий",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 32,
+    "section": "schedule",
+    "tag": "P",
+    "selector": "p.reveal-on-scroll",
+    "text": "Постоянные группы для тех, кто хочет освоить дрон-рейсинг. Выберите день и оставьте заявку на удобное занятие.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 33,
+    "section": "schedule",
+    "tag": "BUTTON",
+    "selector": "#tab-tue",
+    "text": "Вторник18:00–20:00",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 34,
+    "section": "schedule",
+    "tag": "BUTTON",
+    "selector": "#tab-thu",
+    "text": "Четверг18:00–20:00",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 35,
+    "section": "schedule",
+    "tag": "BUTTON",
+    "selector": "#tab-sat",
+    "text": "Суббота12:00–14:00",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 36,
+    "section": "schedule",
+    "tag": "TIME",
+    "selector": "time.",
+    "text": "18:00",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 37,
+    "section": "schedule",
+    "tag": "SPAN",
+    "selector": "span.lesson-type",
+    "text": "12+ 120 минут",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 38,
+    "section": "schedule",
+    "tag": "H3",
+    "selector": "h3.",
+    "text": "Группа дрон-рейсинга",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 39,
+    "section": "schedule",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Симулятор, основы управления и разбор техники с инструктором.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 40,
+    "section": "schedule",
+    "tag": "BUTTON",
+    "selector": "button.lesson-action",
+    "text": "Записаться",
+    "aria": "Записаться на занятие во вторник",
+    "visible": true
+  },
+  {
+    "id": 41,
+    "section": "schedule",
+    "tag": "TIME",
+    "selector": "time.",
+    "text": "18:00",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 42,
+    "section": "schedule",
+    "tag": "SPAN",
+    "selector": "span.lesson-type",
+    "text": "12+ 120 минут",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 43,
+    "section": "schedule",
+    "tag": "H3",
+    "selector": "h3.",
+    "text": "Группа дрон-рейсинга",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 44,
+    "section": "schedule",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Практика на симуляторах, настройки и уверенное управление.",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 45,
+    "section": "schedule",
+    "tag": "BUTTON",
+    "selector": "button.lesson-action",
+    "text": "Записаться",
+    "aria": "Записаться на занятие в четверг",
+    "visible": false
+  },
+  {
+    "id": 46,
+    "section": "schedule",
+    "tag": "TIME",
+    "selector": "time.",
+    "text": "12:00",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 47,
+    "section": "schedule",
+    "tag": "SPAN",
+    "selector": "span.lesson-type",
+    "text": "12+ 120 минут",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 48,
+    "section": "schedule",
+    "tag": "H3",
+    "selector": "h3.",
+    "text": "Группа дрон-рейсинга",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 49,
+    "section": "schedule",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Два часа для симулятора, полётной практики и вопросов по технике.",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 50,
+    "section": "schedule",
+    "tag": "BUTTON",
+    "selector": "button.lesson-action",
+    "text": "Записаться",
+    "aria": "Записаться на занятие в субботу",
+    "visible": false
+  },
+  {
+    "id": 51,
+    "section": "schedule",
+    "tag": "IMG",
+    "selector": "img.",
+    "text": "Занятие на FPV-симуляторах с инструктором",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 52,
+    "section": "schedule",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Разбираемся в технике и тренируемся с инструктором.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 53,
+    "section": "schedule",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Оставьте номер — обсудим удобный вариант занятий.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 54,
+    "section": "schedule",
+    "tag": "A",
+    "selector": "a.text-link",
+    "text": "Подобрать время",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 55,
+    "section": "news",
+    "tag": "H2",
+    "selector": "h2.display.reveal-on-scroll",
+    "text": "Как устроен FPV: техника, практика и спорт",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 68,
+    "section": "news",
+    "tag": "BUTTON",
+    "selector": "button.orbit-control",
+    "text": "Назад",
+    "aria": "Предыдущий материал",
+    "visible": true
+  },
+  {
+    "id": 69,
+    "section": "news",
+    "tag": "BUTTON",
+    "selector": "button.orbit-control",
+    "text": "Далее",
+    "aria": "Следующий материал",
+    "visible": true
+  },
+  {
+    "id": 70,
+    "section": "news",
+    "tag": "P",
+    "selector": "p.orbit-topic",
+    "text": "Техника · разбор",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 71,
+    "section": "news",
+    "tag": "H3",
+    "selector": "h3.",
+    "text": "Почему гоночный дрон летает иначе",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 72,
+    "section": "news",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Лёгкая рама, резкие ускорения и ручное управление. Разбираемся, что отличает гоночный FPV-квадрокоптер от дрона для спокойной съёмки.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 73,
+    "section": "news",
+    "tag": "BUTTON",
+    "selector": "button.story-open",
+    "text": "Читать статью",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 74,
+    "section": "news",
+    "tag": "IMG",
+    "selector": "img.",
+    "text": "FPV-квадрокоптер рядом с гоночными воротами",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 75,
+    "section": "news",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Техника · разбор",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 76,
+    "section": "news",
+    "tag": "H3",
+    "selector": "h3.",
+    "text": "Почему гоночный дрон летает иначе",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 77,
+    "section": "news",
+    "tag": "BUTTON",
+    "selector": "button.news-open",
+    "text": "Читать статью",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 78,
+    "section": "news",
+    "tag": "IMG",
+    "selector": "img.",
+    "text": "Небольшой квадрокоптер в полёте на фоне неба",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 79,
+    "section": "news",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Съёмка · статья с видео",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 80,
+    "section": "news",
+    "tag": "H3",
+    "selector": "h3.",
+    "text": "FPV в кино: когда камера летит вместе с действием",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 81,
+    "section": "news",
+    "tag": "BUTTON",
+    "selector": "button.news-open",
+    "text": "Читать статью",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 82,
+    "section": "news",
+    "tag": "IMG",
+    "selector": "img.",
+    "text": "Человек с кубком, медалью и дипломом в помещении спортивной площадки",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 83,
+    "section": "news",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Дрон-рейсинг · спорт",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 84,
+    "section": "news",
+    "tag": "H3",
+    "selector": "h3.",
+    "text": "На трассе решает точность, а не только скорость",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 85,
+    "section": "news",
+    "tag": "BUTTON",
+    "selector": "button.news-open",
+    "text": "Читать статью",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 86,
+    "section": "news",
+    "tag": "IMG",
+    "selector": "img.",
+    "text": "Участник с пультом перед ноутбуком и инструктор рядом",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 87,
+    "section": "news",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Обучение · с чего начать",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 88,
+    "section": "news",
+    "tag": "H3",
+    "selector": "h3.",
+    "text": "Первый полёт начинается с понятных команд",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 89,
+    "section": "news",
+    "tag": "BUTTON",
+    "selector": "button.news-open",
+    "text": "Читать статью",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 90,
+    "section": "news",
+    "tag": "IMG",
+    "selector": "img.",
+    "text": "На столе лежат квадрокоптеры, пульты, FPV-очки и кейсы",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 91,
+    "section": "news",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Фотозаметка · техника",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 92,
+    "section": "news",
+    "tag": "H3",
+    "selector": "h3.",
+    "text": "Дрон, пульт и FPV-очки — один комплект управления",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 93,
+    "section": "news",
+    "tag": "BUTTON",
+    "selector": "button.news-open",
+    "text": "Открыть фотозаметку",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 94,
+    "section": "news",
+    "tag": "IMG",
+    "selector": "img.",
+    "text": "Человек в FPV-очках держит пульт на фоне рабочего места с инструментами",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 95,
+    "section": "news",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Фотозаметка · жизнь клуба",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 96,
+    "section": "news",
+    "tag": "H3",
+    "selector": "h3.",
+    "text": "Взгляд пилота — через FPV-очки",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 97,
+    "section": "news",
+    "tag": "BUTTON",
+    "selector": "button.news-open",
+    "text": "Открыть фотозаметку",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 98,
+    "section": "news",
+    "tag": "BUTTON",
+    "selector": "button.",
+    "text": "Назад",
+    "aria": "Предыдущие новости",
+    "visible": false
+  },
+  {
+    "id": 99,
+    "section": "news",
+    "tag": "BUTTON",
+    "selector": "button.",
+    "text": "Далее",
+    "aria": "Следующие новости",
+    "visible": false
+  },
+  {
+    "id": 100,
+    "section": "team",
+    "tag": "H2",
+    "selector": "h2.display.reveal-on-scroll",
+    "text": "Инструкторы, которые знают полёт изнутри",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 101,
+    "section": "team",
+    "tag": "P",
+    "selector": "p.reveal-on-scroll",
+    "text": "От первого движения на симуляторе до настроенного FPV-дрона — рядом специалисты с соревновательным и техническим опытом.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 102,
+    "section": "team",
+    "tag": "IMG",
+    "selector": "img.",
+    "text": "Егор Газин",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 103,
+    "section": "team",
+    "tag": "P",
+    "selector": "p.crew-role",
+    "text": "Инструктор по мультироторным системам",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 104,
+    "section": "team",
+    "tag": "H3",
+    "selector": "h3.",
+    "text": "Егор Газин",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 105,
+    "section": "team",
+    "tag": "P",
+    "selector": "p.crew-bio",
+    "text": "Егор Дмитриевич Газин обучает управлению мультироторными системами разных классов, пайке и техническому обслуживанию БПЛА. Его основной фокус — гоночные дроны.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 106,
+    "section": "team",
+    "tag": "BUTTON",
+    "selector": "button.crew-profile-button",
+    "text": "Об инструкторе",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 107,
+    "section": "team",
+    "tag": "A",
+    "selector": "a.",
+    "text": "Записаться на занятие",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 108,
+    "section": "team",
+    "tag": "BUTTON",
+    "selector": "button.",
+    "text": "Егор ГазинИнструктор по мультироторным системам",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 110,
+    "section": "team",
+    "tag": "STRONG",
+    "selector": "strong.",
+    "text": "Егор Газин",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 111,
+    "section": "team",
+    "tag": "SMALL",
+    "selector": "small.",
+    "text": "Инструктор по мультироторным системам",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 112,
+    "section": "team",
+    "tag": "BUTTON",
+    "selector": "button.",
+    "text": "Артём СерышевСтарший инструктор",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 114,
+    "section": "team",
+    "tag": "STRONG",
+    "selector": "strong.",
+    "text": "Артём Серышев",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 115,
+    "section": "team",
+    "tag": "SMALL",
+    "selector": "small.",
+    "text": "Старший инструктор",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 116,
+    "section": "team",
+    "tag": "BUTTON",
+    "selector": "button.",
+    "text": "Олег ГриневИнструктор по спортивному пилотированию",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 118,
+    "section": "team",
+    "tag": "STRONG",
+    "selector": "strong.",
+    "text": "Олег Гринев",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 119,
+    "section": "team",
+    "tag": "SMALL",
+    "selector": "small.",
+    "text": "Инструктор по спортивному пилотированию",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 120,
+    "section": "team",
+    "tag": "BUTTON",
+    "selector": "button.team-photo-button",
+    "text": "",
+    "aria": "Об инструкторе: Егор Газин",
+    "visible": false
+  },
+  {
+    "id": 121,
+    "section": "team",
+    "tag": "IMG",
+    "selector": "img.",
+    "text": "Егор Газин, Инструктор по мультироторным системам",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 122,
+    "section": "team",
+    "tag": "H3",
+    "selector": "h3.",
+    "text": "Егор Газин",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 123,
+    "section": "team",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Инструктор по мультироторным системам",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 124,
+    "section": "team",
+    "tag": "BUTTON",
+    "selector": "button.team-expand",
+    "text": "Об инструкторе",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 125,
+    "section": "team",
+    "tag": "BUTTON",
+    "selector": "button.team-photo-button",
+    "text": "",
+    "aria": "Об инструкторе: Артём Серышев",
+    "visible": false
+  },
+  {
+    "id": 126,
+    "section": "team",
+    "tag": "IMG",
+    "selector": "img.",
+    "text": "Артём Серышев, Старший инструктор",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 127,
+    "section": "team",
+    "tag": "H3",
+    "selector": "h3.",
+    "text": "Артём Серышев",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 128,
+    "section": "team",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Старший инструктор",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 129,
+    "section": "team",
+    "tag": "BUTTON",
+    "selector": "button.team-expand",
+    "text": "Об инструкторе",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 130,
+    "section": "team",
+    "tag": "BUTTON",
+    "selector": "button.team-photo-button",
+    "text": "",
+    "aria": "Об инструкторе: Олег Гринев",
+    "visible": false
+  },
+  {
+    "id": 131,
+    "section": "team",
+    "tag": "IMG",
+    "selector": "img.",
+    "text": "Олег Гринев, Инструктор по спортивному пилотированию",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 132,
+    "section": "team",
+    "tag": "H3",
+    "selector": "h3.",
+    "text": "Олег Гринев",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 133,
+    "section": "team",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Инструктор по спортивному пилотированию",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 134,
+    "section": "team",
+    "tag": "BUTTON",
+    "selector": "button.team-expand",
+    "text": "Об инструкторе",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 135,
+    "section": "documents",
+    "tag": "H2",
+    "selector": "h2.display",
+    "text": "Документы",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 136,
+    "section": "documents",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Актуальные версии документов появятся здесь перед стартом занятий.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 137,
+    "section": "documents",
+    "tag": "BUTTON",
+    "selector": "button.document-open",
+    "text": "Правила посещения и безопасности полётов Открыть",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 138,
+    "section": "documents",
+    "tag": "BUTTON",
+    "selector": "button.document-pdf",
+    "text": "О PDF",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 139,
+    "section": "documents",
+    "tag": "BUTTON",
+    "selector": "button.document-open",
+    "text": "Согласие на участие в занятиях Открыть",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 140,
+    "section": "documents",
+    "tag": "BUTTON",
+    "selector": "button.document-pdf",
+    "text": "О PDF",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 141,
+    "section": "documents",
+    "tag": "BUTTON",
+    "selector": "button.document-open",
+    "text": "Политика обработки данных Открыть",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 142,
+    "section": "documents",
+    "tag": "BUTTON",
+    "selector": "button.document-pdf",
+    "text": "О PDF",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 143,
+    "section": "questions",
+    "tag": "H2",
+    "selector": "h2.display",
+    "text": "Перед первым занятием",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 144,
+    "section": "questions",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Ответы на вопросы, с которых удобно начать знакомство с клубом.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 145,
+    "section": "questions",
+    "tag": "SUMMARY",
+    "selector": "summary.",
+    "text": "Можно прийти без опыта?",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 146,
+    "section": "questions",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Да. Инструкторы помогают освоить пилотирование с нуля и объясняют настройки. На занятиях есть работа на симуляторе. Перед записью обсудите с клубом, какая группа вам подойдёт.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 147,
+    "section": "questions",
+    "tag": "SUMMARY",
+    "selector": "summary.",
+    "text": "Что нужно взять с собой?",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 148,
+    "section": "questions",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Уточните это у клуба по телефону перед занятием. Понадобится ли свой дрон, очки или пульт, лучше узнать до покупки оборудования.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 149,
+    "section": "questions",
+    "tag": "SUMMARY",
+    "selector": "summary.",
+    "text": "Как узнать стоимость и место занятий?",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 150,
+    "section": "questions",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Позвоните в клуб: номер указан ниже. Адрес и стоимость на сайте пока не опубликованы. Их стоит уточнить до выбора занятия.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 151,
+    "section": "questions",
+    "tag": "SUMMARY",
+    "selector": "summary.",
+    "text": "Как записаться?",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 152,
+    "section": "questions",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Выберите день в расписании и позвоните в клуб, чтобы согласовать участие. Форма ниже пока работает в демонстрационном режиме: она позволяет выбрать занятие, но не передаёт заявку.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 153,
+    "section": "callback",
+    "tag": "H2",
+    "selector": "h2.",
+    "text": "Обсудим ваше первое занятие",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 154,
+    "section": "callback",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Позвоните в «Гудвин», чтобы выбрать группу и уточнить условия. Можно спросить про опыт, оборудование и то, с чего начать.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 155,
+    "section": "callback",
+    "tag": "A",
+    "selector": "a.callback-phone",
+    "text": "+7 (908) 011-61-74",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 156,
+    "section": "callback",
+    "tag": "P",
+    "selector": "#form-mode",
+    "text": "Форма пока не отправляет заявки. Для записи позвоните в клуб. Ниже можно проверить выбор занятия.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 157,
+    "section": "callback",
+    "tag": "LABEL",
+    "selector": "label.",
+    "text": "Как к вам обращаться",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 158,
+    "section": "callback",
+    "tag": "INPUT",
+    "selector": "#booking-name",
+    "text": "Например, Ирина",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 159,
+    "section": "callback",
+    "tag": "LABEL",
+    "selector": "label.",
+    "text": "ТелефонНапример: +7 999 123-45-67",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 160,
+    "section": "callback",
+    "tag": "INPUT",
+    "selector": "#booking-phone",
+    "text": "Введите номер с кодом страны",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 161,
+    "section": "callback",
+    "tag": "LEGEND",
+    "selector": "legend.",
+    "text": "Какой день вам подходит?",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 162,
+    "section": "callback",
+    "tag": "LABEL",
+    "selector": "label.",
+    "text": "Вт18:00–20:00",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 163,
+    "section": "callback",
+    "tag": "LABEL",
+    "selector": "label.",
+    "text": "Чт18:00–20:00",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 164,
+    "section": "callback",
+    "tag": "LABEL",
+    "selector": "label.",
+    "text": "Сб12:00–14:00",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 165,
+    "section": "callback",
+    "tag": "P",
+    "selector": "p.booking-choice",
+    "text": "Выберите день здесь или в расписании выше.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 166,
+    "section": "callback",
+    "tag": "BUTTON",
+    "selector": "button.button.button-dark",
+    "text": "Проверить выбор",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 167,
+    "section": "callback",
+    "tag": "P",
+    "selector": "p.form-caption",
+    "text": "Проверка не отправляет данные и не подтверждает запись. Пока форма не подключена, свяжитесь с клубом по телефону.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 168,
+    "section": "callback",
+    "tag": "P",
+    "selector": "p.form-success",
+    "text": "Данные проверены. Заявка не отправлена. Чтобы записаться, позвоните в клуб и назовите выбранный день.",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 170,
+    "section": "global",
+    "tag": "IMG",
+    "selector": "img.brand-logo",
+    "text": "Гудвин — клуб дрон-рейсинга",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 171,
+    "section": "global",
+    "tag": "P",
+    "selector": "p.",
+    "text": "«Гудвин» — занятия по дрон-рейсингу. Учимся управлять, разбираться в технике и понимать полёт.",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 172,
+    "section": "global",
+    "tag": "A",
+    "selector": "a.",
+    "text": "Политика обработки данных",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 173,
+    "section": "global",
+    "tag": "A",
+    "selector": "a.footer-developer",
+    "text": "Разработчик сайта · @sibiryakk0",
+    "aria": null,
+    "visible": true
+  },
+  {
+    "id": 174,
+    "section": "news-dialog",
+    "tag": "BUTTON",
+    "selector": "button.reader-close",
+    "text": "×",
+    "aria": "Закрыть новость",
+    "visible": false
+  },
+  {
+    "id": 177,
+    "section": "news-dialog",
+    "tag": "A",
+    "selector": "a.button.button-primary",
+    "text": "Обсудить занятия",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 178,
+    "section": "team-dialog",
+    "tag": "BUTTON",
+    "selector": "button.reader-close",
+    "text": "×",
+    "aria": "Закрыть профиль",
+    "visible": false
+  },
+  {
+    "id": 179,
+    "section": "team-dialog",
+    "tag": "IMG",
+    "selector": "img.",
+    "text": "Егор Газин, инструктор клуба Гудвин",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 183,
+    "section": "team-dialog",
+    "tag": "A",
+    "selector": "a.button.button-primary",
+    "text": "Записаться на занятие",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 184,
+    "section": "document-dialog",
+    "tag": "BUTTON",
+    "selector": "button.reader-close",
+    "text": "×",
+    "aria": "Закрыть документ",
+    "visible": false
+  },
+  {
+    "id": 187,
+    "section": "document-dialog",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Документ готовится к публикации. Здесь появится утверждённая версия с реквизитами, датой обновления и полной формулировкой.",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 188,
+    "section": "document-dialog",
+    "tag": "H4",
+    "selector": "h4.",
+    "text": "1. Общие положения",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 189,
+    "section": "document-dialog",
+    "tag": "P",
+    "selector": "p.",
+    "text": "До публикации можно задать вопрос по телефону или оставить номер для обратного звонка.",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 190,
+    "section": "document-dialog",
+    "tag": "H4",
+    "selector": "h4.",
+    "text": "2. Важная информация",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 191,
+    "section": "document-dialog",
+    "tag": "P",
+    "selector": "p.",
+    "text": "Мы заменим эту предварительную карточку на официальный текст, когда он будет утверждён клубом.",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 192,
+    "section": "document-dialog",
+    "tag": "BUTTON",
+    "selector": "button.button.button-dark",
+    "text": "О PDF",
+    "aria": null,
+    "visible": false
+  },
+  {
+    "id": 193,
+    "section": "document-dialog",
+    "tag": "A",
+    "selector": "a.text-link",
+    "text": "Задать вопрос",
+    "aria": null,
+    "visible": false
+  }
+]

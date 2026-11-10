@@ -1,217 +1,223 @@
 {
-  "checks": [
-    {
-      "name": "React Bits carousel mounted",
-      "passed": true
-    },
-    {
-      "name": "Original logos are static and unmodified in presentation",
-      "passed": true
-    },
-    {
-      "name": "Instructor selection changes portrait and name",
-      "passed": true
-    },
-    {
-      "name": "Profile is aligned and bounded",
-      "passed": true,
-      "detail": {
-        "open": true,
-        "panel": {
-          "x": 282.5,
-          "y": 266,
-          "w": 860,
-          "h": 468
-        },
-        "photoLeft": 306.5,
-        "textLeft": 676.171875,
-        "photoTop": 290,
-        "textTop": 327.609375,
-        "closeRight": 1126.5,
-        "panelRight": 1142.5,
-        "focusInside": true,
-        "scroll": 3788
+  "version": "7.0.0",
+  "browser": {
+    "checks": [
+      {
+        "name": "one descriptive H1",
+        "pass": true
+      },
+      {
+        "name": "local Cyrillic font loaded",
+        "pass": true
+      },
+      {
+        "name": "protected schedule source unchanged",
+        "pass": true
+      },
+      {
+        "name": "protected team source unchanged",
+        "pass": true
+      },
+      {
+        "name": "telephone unchanged",
+        "pass": true,
+        "details": [
+          "+79080116174",
+          "+79080116174",
+          "+79080116174",
+          "+79080116174"
+        ]
+      },
+      {
+        "name": "6 editorial stories",
+        "pass": true
+      },
+      {
+        "name": "article has real sections",
+        "pass": true
+      },
+      {
+        "name": "article full final paragraph present",
+        "pass": true
+      },
+      {
+        "name": "article CTA reachable",
+        "pass": true
+      },
+      {
+        "name": "dialog contains focus",
+        "pass": true
+      },
+      {
+        "name": "dialog returns focus",
+        "pass": true
+      },
+      {
+        "name": "cinema article has video",
+        "pass": true
+      },
+      {
+        "name": "FAQ opens",
+        "pass": true
+      },
+      {
+        "name": "empty form exposes two actionable errors",
+        "pass": true
+      },
+      {
+        "name": "invalid telephone has clear error",
+        "pass": true
+      },
+      {
+        "name": "form does not claim submission",
+        "pass": true
+      },
+      {
+        "name": "input preserved",
+        "pass": true
+      },
+      {
+        "name": "all viewport widths reflow",
+        "pass": true,
+        "details": [
+          {
+            "width": 1440,
+            "overflow": false
+          },
+          {
+            "width": 1024,
+            "overflow": false
+          },
+          {
+            "width": 768,
+            "overflow": false
+          },
+          {
+            "width": 390,
+            "overflow": false
+          },
+          {
+            "width": 320,
+            "overflow": false
+          }
+        ]
+      },
+      {
+        "name": "200 percent zoom equivalent reflows",
+        "pass": true,
+        "details": {
+          "cssWidth": 640,
+          "physicalWidth": 1280
+        }
+      },
+      {
+        "name": "400 percent zoom equivalent reflows",
+        "pass": true,
+        "details": {
+          "cssWidth": 320,
+          "physicalWidth": 1280
+        }
+      },
+      {
+        "name": "text spacing override reflows",
+        "pass": true
+      },
+      {
+        "name": "reduced motion has no atmosphere",
+        "pass": true
+      },
+      {
+        "name": "reduced motion retains every story",
+        "pass": true
+      },
+      {
+        "name": "no JavaScript errors",
+        "pass": true,
+        "details": []
+      },
+      {
+        "name": "no failed requests",
+        "pass": true,
+        "details": []
       }
-    },
-    {
-      "name": "Opening dialog does not move the page",
-      "passed": true,
-      "detail": {
-        "before": 3788,
-        "after": 3788
-      }
-    },
-    {
-      "name": "Native dialog contains keyboard focus",
-      "passed": true
-    },
-    {
-      "name": "Escape closes and restores focus",
-      "passed": true
-    },
-    {
-      "name": "Backdrop closes dialog",
-      "passed": true
-    },
-    {
-      "name": "Interrupted close cannot hide a reopened dialog",
-      "passed": true
-    },
-    {
-      "name": "Carousel buttons select the next story",
-      "passed": true
-    },
-    {
-      "name": "Video story opens with native controls",
-      "passed": true
-    },
-    {
-      "name": "Local video actually plays",
-      "passed": true
-    },
-    {
-      "name": "Closing video dialog pauses media",
-      "passed": true
-    },
-    {
-      "name": "Keyboard arrows control the carousel",
-      "passed": true
-    },
-    {
-      "name": "Dialog booking action reaches the form",
-      "passed": true
-    },
-    {
-      "name": "Documents use the same dialog system",
-      "passed": true
-    },
-    {
-      "name": "No page overflow at 1440",
-      "passed": true,
-      "detail": {
-        "w": 1440,
-        "c": 1440,
-        "s": 1425
-      }
-    },
-    {
-      "name": "No page overflow at 1024",
-      "passed": true,
-      "detail": {
-        "w": 1024,
-        "c": 1024,
-        "s": 1009
-      }
-    },
-    {
-      "name": "No page overflow at 768",
-      "passed": true,
-      "detail": {
-        "w": 768,
-        "c": 768,
-        "s": 753
-      }
-    },
-    {
-      "name": "No page overflow at 390",
-      "passed": true,
-      "detail": {
-        "w": 390,
-        "c": 390,
-        "s": 375
-      }
-    },
-    {
-      "name": "No page overflow at 320",
-      "passed": true,
-      "detail": {
-        "w": 320,
-        "c": 320,
-        "s": 305
-      }
-    },
-    {
-      "name": "Mobile instructor selection",
-      "passed": true
-    },
-    {
-      "name": "Mobile dialog fits viewport",
-      "passed": true,
-      "detail": {
-        "top": 119.90625,
-        "bottom": 724.09375,
-        "height": 844,
-        "scrolling": false,
-        "close": 131.90625
-      }
-    },
-    {
-      "name": "Touch swipe moves the mobile gallery",
-      "passed": true
-    },
-    {
-      "name": "Reduced motion retains every story without a spinning ring",
-      "passed": true
-    },
-    {
-      "name": "Reduced motion retains logos without WebGL",
-      "passed": true
-    },
-    {
-      "name": "Reduced motion dialog opens immediately",
-      "passed": true
-    },
-    {
-      "name": "Failed enhancement module preserves original content",
-      "passed": true
-    },
-    {
-      "name": "Fallback instructor dialog still works",
-      "passed": true
-    },
-    {
-      "name": "No-WebGL keeps the original logo and interactive carousel",
-      "passed": true,
-      "detail": []
-    },
-    {
-      "name": "No runtime errors",
-      "passed": true,
-      "detail": []
-    },
-    {
-      "name": "No failed requests in supported paths",
-      "passed": true,
-      "detail": []
-    }
-  ],
-  "errors": [],
-  "failedRequests": [],
-  "expectedMediaCancellations": [
-    {
-      "url": "http://127.0.0.1:4177/assets/media/fpv-cinema.mp4",
-      "failure": "net::ERR_ABORTED"
-    }
-  ],
-  "screenshots": [
-    "qa/desktop-header.png",
-    "qa/desktop-instructors.png",
-    "qa/desktop-profile.png",
-    "qa/desktop-news.png",
-    "qa/mobile-instructor.png",
-    "qa/mobile-profile.png",
-    "qa/mobile-news.png"
-  ],
-  "build": {
-    "command": "npm run build",
-    "exit_code": 0,
-    "bundle_bytes": 249395
+    ],
+    "errors": [],
+    "requests": [],
+    "screenshots": [
+      "qa/desktop-hero.png",
+      "qa/desktop-about.png",
+      "qa/desktop-schedule.png",
+      "qa/desktop-news.png",
+      "qa/desktop-team.png",
+      "qa/desktop-documents.png",
+      "qa/desktop-questions.png",
+      "qa/desktop-callback.png",
+      "qa/desktop-article.png",
+      "qa/desktop-form-errors.png",
+      "qa/mobile-top.png",
+      "qa/mobile-about.png",
+      "qa/mobile-schedule.png",
+      "qa/mobile-news.png",
+      "qa/mobile-team.png",
+      "qa/mobile-questions.png",
+      "qa/mobile-callback.png",
+      "qa/mobile-article.png",
+      "qa/text-spacing-320.png"
+    ]
   },
-  "mechanical_review": {
-    "command": "impeccable detect --json index.html experience.css",
-    "exit_code": 1,
-    "findings": "qa/impeccable-findings.json",
-    "interpretation": "No low-contrast finding. Remaining notices include existing hero label, legal smallprint, existing schedule/document controls, and generic container-padding heuristics; the requested portrait composition, original logo and existing copy are preserved. No claim of full-site accessibility certification."
+  "readersAndSpacing": {
+    "checks": [
+      {
+        "index": 0,
+        "title": "Почему гоночный дрон летает иначе",
+        "top": 0,
+        "textLength": 1314
+      },
+      {
+        "index": 1,
+        "title": "FPV в кино: когда камера летит вместе с действием",
+        "top": 0,
+        "textLength": 1364
+      },
+      {
+        "index": 2,
+        "title": "На трассе решает точность, а не только скорость",
+        "top": 0,
+        "textLength": 1074
+      },
+      {
+        "index": 3,
+        "title": "Первый полёт начинается с понятных команд",
+        "top": 0,
+        "textLength": 1311
+      },
+      {
+        "index": 4,
+        "title": "Дрон, пульт и FPV-очки — один комплект управления",
+        "top": 0,
+        "textLength": 426
+      },
+      {
+        "index": 5,
+        "title": "Взгляд пилота — через FPV-очки",
+        "top": 0,
+        "textLength": 429
+      }
+    ],
+    "errors": [],
+    "originalVisible": true,
+    "fallbackFull": true,
+    "textSpacingOverflow": []
   },
-  "scope": "Local changes only. No deployment, commits or GitHub writes."
+  "typeDetector": {
+    "remainingWarning": "One heuristic tiny-text 11px; runtime visible computed text scan found none",
+    "report": "qa/v7-type-findings.json"
+  },
+  "protected": "#schedule and #team original HTML; four phone links",
+  "limits": [
+    "Desktop Chromium emulation, not a physical phone",
+    "200/400 percent reflow-equivalent CSS viewports with DPR2/4, not browser toolbar zoom",
+    "No form transmission backend; actual contact by unchanged telephone",
+    "Address, price, equipment, official documents and event facts remain unconfirmed"
+  ]
 }

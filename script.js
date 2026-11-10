@@ -244,7 +244,7 @@ function initRevealHover(e) {
     );
     t &&
       e.dataset.session &&
-      ((t.textContent = `Вы выбрали: ${e.dataset.session}. Мы подтвердим запись звонком.`),
+      ((t.textContent = `Вы выбрали: ${e.dataset.session}. Для подтверждения записи позвоните в клуб.`),
       n && (n.checked = true));
     scrollToCallback();
   }),
@@ -255,20 +255,12 @@ function initRevealHover(e) {
   initScrollFloat(),
   initClubOpening(),
   document
-    .querySelector("[data-callback-form]")
-    ?.addEventListener("submit", (e) => {
-      (e.preventDefault(),
-        (e.currentTarget.querySelector(".form-success").hidden = !1),
-        (e.currentTarget.querySelector("button").textContent =
-          "Спасибо, ждите звонка"));
-    }),
-  document
     .querySelector("[data-session-picker]")
     ?.addEventListener("change", (e) => {
       const t = document.querySelector("[data-booking-choice]");
       t &&
         (t.textContent = e.target.value
-          ? `Вы выбрали: ${e.target.value}. Мы подтвердим запись звонком.`
+          ? `Вы выбрали: ${e.target.value}. Для подтверждения записи позвоните в клуб.`
           : "Можно выбрать удобную дату в расписании выше.");
     }),
   document.querySelectorAll("[data-reveal-hover]").forEach(initRevealHover));
@@ -310,6 +302,14 @@ function showSurface(dialog, trigger = document.activeElement) {
   document.body.classList.add('has-open-dialog');
   setExpanded(state.trigger, true);
   dialog.querySelector('.reader-close')?.focus({ preventScroll: true });
+  // Reopening a long reader after a viewport change must start at its heading.
+  requestAnimationFrame(() => {
+    if (dialog.open && activeSurface === dialog) {
+      dialog.scrollTop = 0;
+      panel.scrollTop = 0;
+      panel.querySelector('.dialog-content').scrollTop = 0;
+    }
+  });
   if (!reduceMotion) {
     state.layerAnimation = dialog.animate([{opacity:0},{opacity:1}], {duration:180,easing:'ease-out'});
     state.panelAnimation = panel.animate([
