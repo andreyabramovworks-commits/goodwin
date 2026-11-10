@@ -153,7 +153,7 @@
       "format": "esm"
     },
     "src/enhancements.jsx": {
-      "bytes": 9914,
+      "bytes": 11188,
       "imports": [
         {
           "path": "node_modules/react/index.js",
@@ -228,7 +228,7 @@
           "bytesInOutput": 51
         },
         "src/enhancements.jsx": {
-          "bytesInOutput": 9111
+          "bytesInOutput": 11563
         },
         "src/react-bits/CircularCarousel.jsx": {
           "bytesInOutput": 18703
@@ -243,7 +243,7 @@
           "bytesInOutput": 0
         }
       },
-      "bytes": 261670
+      "bytes": 264122
     },
     "assets/enhancements.css": {
       "imports": [],

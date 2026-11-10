@@ -157,6 +157,38 @@ function initScrollFloat() {
     document.addEventListener("scroll", o, { passive: !0 }),
     window.addEventListener("resize", o, { passive: !0 }));
 }
+function initHeroDepth() {
+  const frame = document.querySelector("[data-hero-depth]");
+  if (!frame || reduceMotion || !finePointer) return;
+  let animationFrame = 0;
+  let targetX = 0;
+  let targetY = 0;
+  let currentX = 0;
+  let currentY = 0;
+  const render = () => {
+    animationFrame = 0;
+    currentX += (targetX - currentX) * 0.09;
+    currentY += (targetY - currentY) * 0.09;
+    frame.style.setProperty("--depth-x", currentX.toFixed(3));
+    frame.style.setProperty("--depth-y", currentY.toFixed(3));
+    if (Math.abs(targetX - currentX) > 0.002 || Math.abs(targetY - currentY) > 0.002)
+      animationFrame = requestAnimationFrame(render);
+  };
+  const schedule = () => {
+    if (!animationFrame) animationFrame = requestAnimationFrame(render);
+  };
+  frame.addEventListener("pointermove", (event) => {
+    const rect = frame.getBoundingClientRect();
+    targetX = Math.max(-1, Math.min(1, ((event.clientX - rect.left) / rect.width - 0.5) * 2));
+    targetY = Math.max(-1, Math.min(1, ((event.clientY - rect.top) / rect.height - 0.5) * 2));
+    schedule();
+  });
+  frame.addEventListener("pointerleave", () => {
+    targetX = 0;
+    targetY = 0;
+    schedule();
+  });
+}
 function initClubOpening() {
   const e = document.querySelector("[data-club-opening]");
   if (!e) return;
@@ -253,6 +285,7 @@ function initRevealHover(e) {
   initSingleReveals(),
   initScrollProgress(),
   initScrollFloat(),
+  initHeroDepth(),
   initClubOpening(),
   document
     .querySelector("[data-callback-form]")

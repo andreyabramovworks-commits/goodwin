@@ -1,0 +1,399 @@
+[
+  {
+    "viewport": {
+      "name": "iphone-se",
+      "width": 320,
+      "height": 568
+    },
+    "scrollWidth": 305,
+    "innerWidth": 320,
+    "shortTargets": [
+      {
+        "text": "К содержанию",
+        "width": 127,
+        "height": 39
+      },
+      {
+        "text": "Выбрать время",
+        "width": 98,
+        "height": 30
+      },
+      {
+        "text": "Назад",
+        "width": 82,
+        "height": 43
+      },
+      {
+        "text": "Далее",
+        "width": 84,
+        "height": 43
+      },
+      {
+        "text": "PDF",
+        "width": 43,
+        "height": 34
+      },
+      {
+        "text": "PDF",
+        "width": 43,
+        "height": 34
+      },
+      {
+        "text": "PDF",
+        "width": 43,
+        "height": 34
+      },
+      {
+        "text": "+7 (908) 011-61-74",
+        "width": 188,
+        "height": 29
+      }
+    ],
+    "tinyText": [
+      {
+        "text": "18:00–20:00",
+        "fontSize": "11px"
+      },
+      {
+        "text": "18:00–20:00",
+        "fontSize": "11px"
+      },
+      {
+        "text": "12:00–14:00",
+        "fontSize": "11px"
+      },
+      {
+        "text": "Digital signature · web design",
+        "fontSize": "7px"
+      }
+    ],
+    "consoleHeight": 8934
+  },
+  {
+    "viewport": {
+      "name": "android",
+      "width": 390,
+      "height": 844
+    },
+    "scrollWidth": 375,
+    "innerWidth": 390,
+    "shortTargets": [
+      {
+        "text": "К содержанию",
+        "width": 127,
+        "height": 39
+      },
+      {
+        "text": "Выбрать время",
+        "width": 98,
+        "height": 30
+      },
+      {
+        "text": "Назад",
+        "width": 82,
+        "height": 43
+      },
+      {
+        "text": "Далее",
+        "width": 84,
+        "height": 43
+      },
+      {
+        "text": "PDF",
+        "width": 43,
+        "height": 34
+      },
+      {
+        "text": "PDF",
+        "width": 43,
+        "height": 34
+      },
+      {
+        "text": "PDF",
+        "width": 43,
+        "height": 34
+      },
+      {
+        "text": "+7 (908) 011-61-74",
+        "width": 188,
+        "height": 29
+      }
+    ],
+    "tinyText": [
+      {
+        "text": "LIVE / FPV",
+        "fontSize": "10px"
+      },
+      {
+        "text": "TRACK 01",
+        "fontSize": "10px"
+      },
+      {
+        "text": "18:00–20:00",
+        "fontSize": "11px"
+      },
+      {
+        "text": "18:00–20:00",
+        "fontSize": "11px"
+      },
+      {
+        "text": "12:00–14:00",
+        "fontSize": "11px"
+      },
+      {
+        "text": "Digital signature · web design",
+        "fontSize": "7px"
+      }
+    ],
+    "consoleHeight": 8606
+  },
+  {
+    "viewport": {
+      "name": "iphone-pro-max",
+      "width": 430,
+      "height": 932
+    },
+    "scrollWidth": 415,
+    "innerWidth": 430,
+    "shortTargets": [
+      {
+        "text": "К содержанию",
+        "width": 127,
+        "height": 39
+      },
+      {
+        "text": "Выбрать время",
+        "width": 98,
+        "height": 30
+      },
+      {
+        "text": "Назад",
+        "width": 82,
+        "height": 43
+      },
+      {
+        "text": "Далее",
+        "width": 84,
+        "height": 43
+      },
+      {
+        "text": "PDF",
+        "width": 43,
+        "height": 34
+      },
+      {
+        "text": "PDF",
+        "width": 43,
+        "height": 34
+      },
+      {
+        "text": "PDF",
+        "width": 43,
+        "height": 34
+      },
+      {
+        "text": "+7 (908) 011-61-74",
+        "width": 188,
+        "height": 29
+      }
+    ],
+    "tinyText": [
+      {
+        "text": "LIVE / FPV",
+        "fontSize": "10px"
+      },
+      {
+        "text": "TRACK 01",
+        "fontSize": "10px"
+      },
+      {
+        "text": "18:00–20:00",
+        "fontSize": "11px"
+      },
+      {
+        "text": "18:00–20:00",
+        "fontSize": "11px"
+      },
+      {
+        "text": "12:00–14:00",
+        "fontSize": "11px"
+      },
+      {
+        "text": "Digital signature · web design",
+        "fontSize": "7px"
+      }
+    ],
+    "consoleHeight": 8477
+  },
+  {
+    "viewport": {
+      "name": "landscape",
+      "width": 844,
+      "height": 390
+    },
+    "scrollWidth": 829,
+    "innerWidth": 844,
+    "shortTargets": [
+      {
+        "text": "К содержанию",
+        "width": 134,
+        "height": 41
+      },
+      {
+        "text": "",
+        "width": 46,
+        "height": 29
+      },
+      {
+        "text": "О клубе",
+        "width": 781,
+        "height": 25
+      },
+      {
+        "text": "Занятия",
+        "width": 781,
+        "height": 25
+      },
+      {
+        "text": "Новости",
+        "width": 781,
+        "height": 25
+      },
+      {
+        "text": "Команда",
+        "width": 781,
+        "height": 25
+      },
+      {
+        "text": "Документы",
+        "width": 781,
+        "height": 25
+      },
+      {
+        "text": "Позвонить: +7 (908) 011-61-74",
+        "width": 781,
+        "height": 34
+      },
+      {
+        "text": "Выбрать время",
+        "width": 98,
+        "height": 32
+      },
+      {
+        "text": "Назад",
+        "width": 82,
+        "height": 43
+      },
+      {
+        "text": "Далее",
+        "width": 84,
+        "height": 43
+      },
+      {
+        "text": "PDF",
+        "width": 43,
+        "height": 34
+      },
+      {
+        "text": "PDF",
+        "width": 43,
+        "height": 34
+      },
+      {
+        "text": "PDF",
+        "width": 43,
+        "height": 34
+      },
+      {
+        "text": "+7 (908) 011-61-74",
+        "width": 213,
+        "height": 33
+      },
+      {
+        "text": "",
+        "width": 700,
+        "height": 39
+      },
+      {
+        "text": "",
+        "width": 700,
+        "height": 39
+      },
+      {
+        "text": "",
+        "width": 767,
+        "height": 13
+      },
+      {
+        "text": "",
+        "width": 767,
+        "height": 13
+      },
+      {
+        "text": "",
+        "width": 767,
+        "height": 13
+      },
+      {
+        "text": "Политика обработки данных",
+        "width": 157,
+        "height": 19
+      }
+    ],
+    "tinyText": [
+      {
+        "text": "LIVE / FPV",
+        "fontSize": "9px"
+      },
+      {
+        "text": "TRACK 01",
+        "fontSize": "9px"
+      },
+      {
+        "text": "Техника",
+        "fontSize": "11px"
+      },
+      {
+        "text": "Видео · кино",
+        "fontSize": "11px"
+      },
+      {
+        "text": "Спорт",
+        "fontSize": "11px"
+      },
+      {
+        "text": "Практика",
+        "fontSize": "11px"
+      },
+      {
+        "text": "Внутри клуба",
+        "fontSize": "11px"
+      },
+      {
+        "text": "Запись открыта",
+        "fontSize": "11px"
+      },
+      {
+        "text": "Открыть",
+        "fontSize": "11px"
+      },
+      {
+        "text": "Открыть",
+        "fontSize": "11px"
+      },
+      {
+        "text": "Открыть",
+        "fontSize": "11px"
+      },
+      {
+        "text": "Политика обработки данных",
+        "fontSize": "11px"
+      },
+      {
+        "text": "Digital signature · web design",
+        "fontSize": "7px"
+      }
+    ],
+    "consoleHeight": 7401
+  }
+]

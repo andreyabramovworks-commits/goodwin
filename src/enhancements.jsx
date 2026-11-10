@@ -15,6 +15,7 @@ function useNarrow() {
 }
 const fallback=document.querySelector('[data-news-track]');
 const extraImages=['assets/media/club-equipment.jpg','assets/media/training-simulators.jpg'];
+const cinemaStory='FPV-дрон изменил язык съёмки: он проходит через узкие пространства, следует за героем и строит динамичные траектории там, где раньше требовались кран или вертолёт. Компактная камера оказывается буквально внутри действия, но выразительный кадр зависит не только от техники. Пилоту нужно заранее видеть маршрут, держать скорость и работать как соавтор режиссёра. Именно поэтому навыки из дрон-рейсинга — точность, реакция и чувство пространства — напрямую переходят в профессиональную съёмку.';
 const items=[...fallback.children].map((card,index)=>{
   const button=card.querySelector('.news-open');
   const video=card.querySelector('video');
@@ -23,7 +24,7 @@ const items=[...fallback.children].map((card,index)=>{
     alt:card.querySelector('img')?.getAttribute('alt') || card.querySelector('h3').textContent.trim(),
     title:button?.dataset.newsTitle || card.querySelector('h3').textContent.trim(),
     subtitle:button?.dataset.newsDate || 'Видео · кино',
-    body:button?.dataset.newsBody || 'FPV-дрон позволяет вести съёмку изнутри движения. Посмотрите материал о динамичной FPV-съёмке.',
+    body:button?.dataset.newsBody || cinemaStory,
     video:video?.getAttribute('src')
   };
 });
@@ -51,9 +52,9 @@ function openStory(item,trigger) {
 }
 function NewsExperience() {
   const [active,setActive]=useState(0);
-  const [playing,setPlaying]=useState(false);
   const reduced=useReducedMotion();
   const narrow=useNarrow();
+  const [playing,setPlaying]=useState(()=>!matchMedia('(prefers-reduced-motion: reduce)').matches);
   const api=useRef(null);
   const host=useRef(null);
   const rail=useRef(null);
@@ -63,12 +64,23 @@ function NewsExperience() {
     fallback.closest('.news-viewport').inert=true;
     return()=>{document.querySelector('[data-news-carousel]')?.classList.remove('is-enhanced');fallback.closest('.news-viewport').inert=false;};
   },[]);
-  const select=(item,index)=>{if(index===active){setPlaying(false);openStory(item,host.current.querySelector('.story-open'));}};
-  const goTo=index=>{setPlaying(false);if(reduced||narrow){setActive(index);const track=rail.current;const card=track?.children[index];if(card)track.scrollTo({left:card.offsetLeft-track.offsetLeft-(track.clientWidth-card.offsetWidth)/2,behavior:reduced?'instant':'smooth'});}else api.current?.goTo(index);};
+  useEffect(()=>{
+    if(reduced){setPlaying(false);return;}
+    const visibility=()=>setPlaying(!document.hidden);
+    document.addEventListener('visibilitychange',visibility);
+    return()=>document.removeEventListener('visibilitychange',visibility);
+  },[reduced]);
+  useEffect(()=>{
+    if(!narrow||reduced||!playing)return;
+    const timer=setInterval(()=>goTo((active+1)%items.length,false),7000);
+    return()=>clearInterval(timer);
+  },[active,narrow,reduced,playing]);
+  const select=(item,index)=>{if(index===active)openStory(item,host.current.querySelector('.story-open'));};
+  const goTo=index=>{if(reduced||narrow){setActive(index);const track=rail.current;const card=track?.children[index];if(card)track.scrollTo({left:card.offsetLeft-track.offsetLeft-(track.clientWidth-card.offsetWidth)/2,behavior:reduced?'instant':'smooth'});}else api.current?.goTo(index);};
   return <div className={'news-orbit'+(reduced?' is-reduced':'')} ref={host}>
     {reduced?<div className="news-static-strip">{items.map((item,index)=><button key={index} className={'news-static-item'+(active===index?' is-active':'')} onClick={()=>setActive(index)} aria-pressed={active===index}><img src={item.src} alt=""/><span>{item.title}</span></button>)}</div>:
     narrow?<div className="news-mobile-gallery" ref={rail} onScroll={e=>{const el=e.currentTarget;const index=Math.round(el.scrollLeft/(el.children[0]?.offsetWidth+16));setActive(Math.min(items.length-1,Math.max(0,index)))}}>{items.map((item,index)=><button key={index} aria-label={item.title} onClick={e=>openStory(item,e.currentTarget)}><img src={item.src} alt={item.alt}/><span>{item.subtitle}</span></button>)}</div>:
-    <div className="news-orbit-stage"><CircularCarousel items={items} apiRef={api} preset="orbit" intro="rise" cardWidth={360} aspectRatio={.9} gap={38} tilt={-8} perspective={1800} curve={0} autoplay={playing?'drift':'off'} speed={3} momentum={.35} parallax={.06} stretch={0} depthFade={.76} innerShade={.75} cornerRadius={14} fadeColor="#edf6fb" onChange={setActive} onItemClick={select}/></div>}
+    <div className="news-orbit-stage"><CircularCarousel items={items} apiRef={api} preset="orbit" intro="rise" cardWidth={360} aspectRatio={.9} gap={38} tilt={-8} perspective={1800} curve={0} autoplay={playing?'drift':'off'} speed={4.5} momentum={.35} parallax={.06} stretch={0} depthFade={.76} innerShade={.75} cornerRadius={14} fadeColor="#edf6fb" pauseOnHover={false} onChange={setActive} onItemClick={select}/></div>}
     <div className="orbit-navigation" aria-label="Управление каруселью">
       <div className="orbit-arrows">
         <button className="orbit-control" aria-label="Предыдущий материал" onClick={()=>goTo((active+items.length-1)%items.length)}>Назад</button>
@@ -78,7 +90,7 @@ function NewsExperience() {
     </div>
     <div className="orbit-story" aria-live="polite" aria-atomic="true">
       <div className="orbit-story-main"><p className="orbit-topic">{current.subtitle}</p><h3>{current.title}</h3></div>
-      <div className="orbit-story-copy"><p>{current.body}</p><button className="story-open" onClick={e=>{setPlaying(false);openStory(current,e.currentTarget)}}>{current.video?'Смотреть видео':'Читать материал'}</button></div>
+      <div className="orbit-story-copy"><p>{current.body}</p><button className="story-open" onClick={e=>openStory(current,e.currentTarget)}>{current.video?'Смотреть видео':'Читать материал'}</button></div>
     </div>
     
   </div>;

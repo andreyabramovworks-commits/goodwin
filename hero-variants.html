@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Гудвин — варианты первого экрана</title>
+  <link rel="stylesheet" href="hero-variants.css" />
+</head>
+<body>
+  <header class="picker">
+    <div><b>ГУДВИН</b><span>3 авторских варианта первого экрана</span></div>
+    <nav aria-label="Выбор варианта">
+      <button class="is-active" data-show="a">A · Окно полёта</button>
+      <button data-show="b">B · FPV-видоискатель</button>
+      <button data-show="c">C · Траектория</button>
+    </nav>
+    <a href="index.html">Вернуться на сайт</a>
+  </header>
+
+  <main>
+    <section class="concept concept-a is-active" data-concept="a">
+      <div class="copy">
+        <span class="label">Клуб дрон-рейсинга «Гудвин»</span>
+        <h1>Увидеть трассу<br>глазами пилота.</h1>
+        <p>Симулятор, устройство FPV-дрона и настоящая практика — с инструктором рядом на каждом этапе.</p>
+        <div class="actions"><a href="#">Записаться на занятие</a><span>Вт, Чт · 18:00 / Сб · 12:00</span></div>
+      </div>
+      <div class="flight-window">
+        <div class="flight-index">FPV · 01</div>
+        <img src="assets/media/fpv-flight.jpg" alt="FPV-дрон в полёте" />
+        <div class="telemetry"><i></i><span>Первый маршрут начинается в симуляторе</span><b>→</b></div>
+      </div>
+      <p class="concept-note">A — фотография как широкое окно в полёт. Спокойный, понятный и самый универсальный вариант.</p>
+    </section>
+
+    <section class="concept concept-b" data-concept="b" hidden>
+      <div class="viewfinder">
+        <img src="assets/media/fpv-flight.jpg" alt="FPV-дрон в полёте" />
+        <span class="corner tl"></span><span class="corner tr"></span><span class="corner bl"></span><span class="corner br"></span>
+        <div class="focus-ring"><i></i></div>
+        <div class="hud"><span>LIVE / FPV</span><span>TRACK 01</span></div>
+      </div>
+      <div class="copy glass-copy">
+        <span class="label">Гудвин · клуб дрон-рейсинга</span>
+        <h1>Скорость,<br>которой<br>управляете вы.</h1>
+        <p>Начните с безопасного симулятора. Разберите технику. Подготовьтесь к своему первому полёту.</p>
+        <div class="actions"><a href="#">Попробовать FPV</a><span>Первое занятие — знакомство</span></div>
+      </div>
+      <p class="concept-note">B — фотография становится живым FPV-видоискателем. Больше спорта и технологичности, меньше «карточности».</p>
+    </section>
+
+    <section class="concept concept-c" data-concept="c" hidden>
+      <div class="copy">
+        <span class="label">«Гудвин» · путь пилота</span>
+        <h1>От первого<br>движения —<br>к точному кругу.</h1>
+        <p>Освойте управление в своём темпе: симулятор, техника и полётная практика складываются в один понятный маршрут.</p>
+        <div class="actions"><a href="#">Выбрать тренировку</a><span>12+ · занятия по 120 минут</span></div>
+      </div>
+      <div class="track-photo">
+        <div class="track-line" aria-hidden="true"></div>
+        <div class="photo-disc"><img src="assets/media/fpv-flight.jpg" alt="FPV-дрон в полёте" /></div>
+        <div class="route-card"><b>01</b><span>Сначала почувствуйте управление — скорость придёт следом.</span></div>
+      </div>
+      <p class="concept-note">C — снимок встроен в образ гоночной траектории. Самый фирменный и необычный вариант, хорошо дружит с линиями логотипа.</p>
+    </section>
+  </main>
+  <script>
+    const buttons=[...document.querySelectorAll('[data-show]')];
+    const concepts=[...document.querySelectorAll('[data-concept]')];
+    buttons.forEach(button=>button.addEventListener('click',()=>{
+      buttons.forEach(item=>item.classList.toggle('is-active',item===button));
+      concepts.forEach(item=>{const active=item.dataset.concept===button.dataset.show;item.hidden=!active;item.classList.toggle('is-active',active)});
+    }));
+  </script>
+</body>
+</html>
