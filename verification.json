@@ -1,0 +1,217 @@
+{
+  "checks": [
+    {
+      "name": "React Bits carousel mounted",
+      "passed": true
+    },
+    {
+      "name": "Original logos are static and unmodified in presentation",
+      "passed": true
+    },
+    {
+      "name": "Instructor selection changes portrait and name",
+      "passed": true
+    },
+    {
+      "name": "Profile is aligned and bounded",
+      "passed": true,
+      "detail": {
+        "open": true,
+        "panel": {
+          "x": 282.5,
+          "y": 266,
+          "w": 860,
+          "h": 468
+        },
+        "photoLeft": 306.5,
+        "textLeft": 676.171875,
+        "photoTop": 290,
+        "textTop": 327.609375,
+        "closeRight": 1126.5,
+        "panelRight": 1142.5,
+        "focusInside": true,
+        "scroll": 3788
+      }
+    },
+    {
+      "name": "Opening dialog does not move the page",
+      "passed": true,
+      "detail": {
+        "before": 3788,
+        "after": 3788
+      }
+    },
+    {
+      "name": "Native dialog contains keyboard focus",
+      "passed": true
+    },
+    {
+      "name": "Escape closes and restores focus",
+      "passed": true
+    },
+    {
+      "name": "Backdrop closes dialog",
+      "passed": true
+    },
+    {
+      "name": "Interrupted close cannot hide a reopened dialog",
+      "passed": true
+    },
+    {
+      "name": "Carousel buttons select the next story",
+      "passed": true
+    },
+    {
+      "name": "Video story opens with native controls",
+      "passed": true
+    },
+    {
+      "name": "Local video actually plays",
+      "passed": true
+    },
+    {
+      "name": "Closing video dialog pauses media",
+      "passed": true
+    },
+    {
+      "name": "Keyboard arrows control the carousel",
+      "passed": true
+    },
+    {
+      "name": "Dialog booking action reaches the form",
+      "passed": true
+    },
+    {
+      "name": "Documents use the same dialog system",
+      "passed": true
+    },
+    {
+      "name": "No page overflow at 1440",
+      "passed": true,
+      "detail": {
+        "w": 1440,
+        "c": 1440,
+        "s": 1425
+      }
+    },
+    {
+      "name": "No page overflow at 1024",
+      "passed": true,
+      "detail": {
+        "w": 1024,
+        "c": 1024,
+        "s": 1009
+      }
+    },
+    {
+      "name": "No page overflow at 768",
+      "passed": true,
+      "detail": {
+        "w": 768,
+        "c": 768,
+        "s": 753
+      }
+    },
+    {
+      "name": "No page overflow at 390",
+      "passed": true,
+      "detail": {
+        "w": 390,
+        "c": 390,
+        "s": 375
+      }
+    },
+    {
+      "name": "No page overflow at 320",
+      "passed": true,
+      "detail": {
+        "w": 320,
+        "c": 320,
+        "s": 305
+      }
+    },
+    {
+      "name": "Mobile instructor selection",
+      "passed": true
+    },
+    {
+      "name": "Mobile dialog fits viewport",
+      "passed": true,
+      "detail": {
+        "top": 119.90625,
+        "bottom": 724.09375,
+        "height": 844,
+        "scrolling": false,
+        "close": 131.90625
+      }
+    },
+    {
+      "name": "Touch swipe moves the mobile gallery",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion retains every story without a spinning ring",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion retains logos without WebGL",
+      "passed": true
+    },
+    {
+      "name": "Reduced motion dialog opens immediately",
+      "passed": true
+    },
+    {
+      "name": "Failed enhancement module preserves original content",
+      "passed": true
+    },
+    {
+      "name": "Fallback instructor dialog still works",
+      "passed": true
+    },
+    {
+      "name": "No-WebGL keeps the original logo and interactive carousel",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No runtime errors",
+      "passed": true,
+      "detail": []
+    },
+    {
+      "name": "No failed requests in supported paths",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "expectedMediaCancellations": [
+    {
+      "url": "http://127.0.0.1:4177/assets/media/fpv-cinema.mp4",
+      "failure": "net::ERR_ABORTED"
+    }
+  ],
+  "screenshots": [
+    "qa/desktop-header.png",
+    "qa/desktop-instructors.png",
+    "qa/desktop-profile.png",
+    "qa/desktop-news.png",
+    "qa/mobile-instructor.png",
+    "qa/mobile-profile.png",
+    "qa/mobile-news.png"
+  ],
+  "build": {
+    "command": "npm run build",
+    "exit_code": 0,
+    "bundle_bytes": 249395
+  },
+  "mechanical_review": {
+    "command": "impeccable detect --json index.html experience.css",
+    "exit_code": 1,
+    "findings": "qa/impeccable-findings.json",
+    "interpretation": "No low-contrast finding. Remaining notices include existing hero label, legal smallprint, existing schedule/document controls, and generic container-padding heuristics; the requested portrait composition, original logo and existing copy are preserved. No claim of full-site accessibility certification."
+  },
+  "scope": "Local changes only. No deployment, commits or GitHub writes."
+}

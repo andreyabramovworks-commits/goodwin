@@ -272,99 +272,98 @@ function initRevealHover(e) {
           : "Можно выбрать удобную дату в расписании выше.");
     }),
   document.querySelectorAll("[data-reveal-hover]").forEach(initRevealHover));
-const reader = document.querySelector("[data-news-reader]"),
-  readerTitle = document.querySelector("[data-news-reader-title]"),
-  readerDate = document.querySelector("[data-news-reader-date]"),
-  readerBody = document.querySelector("[data-news-reader-body]"),
-  surfaceAnimations = new WeakMap(),
-  surfaceMotion = (e, t, n) => {
-    const r = surfaceAnimations.get(e);
-    if ((r?.cancel(), reduceMotion)) return null;
-    const a = e.animate(t, n);
-    return (surfaceAnimations.set(e, a), a);
-  },
-  showSurface = (e) => {
-    e &&
-      ((e.hidden = !1),
-      e.classList.contains("detail-layer") &&
-        document.body.classList.add("has-open-dialog"),
-      e.classList.remove("is-closing", "is-open"),
-      e.getBoundingClientRect(),
-      e.classList.add("is-open"),
-      reduceMotion ||
-        e.animate([{ opacity: 0 }, { opacity: 1 }], {
-          duration: 220,
-          easing: "ease-out",
-        }),
-      surfaceMotion(
-        e.querySelector(".detail-panel") || e,
-        [
-          {
-            opacity: 0,
-            transform: "translateY(24px) scale(0.955)",
-            filter: "blur(12px)",
-          },
-          {
-            opacity: 1,
-            transform: "translateY(0) scale(1)",
-            filter: "blur(0)",
-          },
-        ],
-        { duration: 540, easing: "cubic-bezier(0.22, 1, 0.36, 1)" },
-      ));
-  },
-  hideSurface = (e) => {
-    if (!e || e.hidden) return;
-    (e.classList.add("is-closing"), e.classList.remove("is-open"));
-    const t = 340,
-      n = surfaceMotion(
-        e.querySelector(".detail-panel") || e,
-        [
-          {
-            opacity: 1,
-            transform: "translateY(0) scale(1)",
-            filter: "blur(0)",
-          },
-          {
-            opacity: 0,
-            transform: "translateY(10px) scale(0.975)",
-            filter: "blur(8px)",
-          },
-        ],
-        { duration: t, easing: "cubic-bezier(0.55, 0, 1, 0.45)" },
-      ),
-      r = () => {
-        e.classList.contains("is-closing") &&
-          ((e.hidden = !0),
-          e.classList.remove("is-closing"),
-          document.querySelectorAll(".detail-layer:not([hidden])").length ||
-            document.body.classList.remove("has-open-dialog"));
-      };
-    reduceMotion ||
-      e.animate([{ opacity: 1 }, { opacity: 0 }], {
-        duration: 300,
-        easing: "ease-in",
-      });
-    n ? n.finished.then(r).catch(() => {}) : r();
+const reader = document.querySelector('[data-news-reader]'),
+  readerTitle = document.querySelector('[data-news-reader-title]'),
+  readerDate = document.querySelector('[data-news-reader-date]'),
+  readerBody = document.querySelector('[data-news-reader-body]');
+
+const dialogStates = new WeakMap();
+let activeSurface = null;
+function setExpanded(trigger, expanded) {
+  const card = trigger?.closest?.('[data-team-card]');
+  card?.querySelectorAll('[data-team-toggle]').forEach(b => b.setAttribute('aria-expanded', String(expanded)));
+}
+function showSurface(dialog, trigger = document.activeElement) {
+  if (!dialog) return;
+  if (activeSurface && activeSurface !== dialog) {
+    const previous = activeSurface;
+    const old = dialogStates.get(previous);
+    old?.panelAnimation?.cancel();
+    old?.layerAnimation?.cancel();
+    if (old) old.token++;
+    previous.close(); previous.hidden = true;
+    setExpanded(old?.trigger, false);
+  }
+  const old = dialogStates.get(dialog);
+  old?.panelAnimation?.cancel(); old?.layerAnimation?.cancel();
+  const state = { token: (old?.token || 0) + 1, trigger: dialog.open ? old?.trigger : trigger };
+  dialogStates.set(dialog, state);
+  activeSurface = dialog;
+  dialog.hidden = false;
+  dialog.classList.remove('is-closing');
+  dialog.classList.add('is-open');
+  dialog.scrollTop = 0;
+  const panel = dialog.querySelector('.detail-panel');
+  panel.scrollTop = 0;
+  panel.querySelector('.dialog-content').scrollTop = 0;
+  if (!dialog.open) dialog.showModal();
+  document.body.classList.add('has-open-dialog');
+  setExpanded(state.trigger, true);
+  dialog.querySelector('.reader-close')?.focus({ preventScroll: true });
+  if (!reduceMotion) {
+    state.layerAnimation = dialog.animate([{opacity:0},{opacity:1}], {duration:180,easing:'ease-out'});
+    state.panelAnimation = panel.animate([
+      {opacity:0,transform:'translateY(18px) scale(.98)'},
+      {opacity:1,transform:'none'}
+    ], {duration:300,easing:'cubic-bezier(.16,1,.3,1)'});
+  }
+}
+function hideSurface(dialog, options = {}) {
+  if (!dialog?.open) return Promise.resolve();
+  const state = dialogStates.get(dialog) || { token:0 };
+  const token = ++state.token;
+  state.panelAnimation?.cancel(); state.layerAnimation?.cancel();
+  dialog.classList.add('is-closing');
+  const finish = () => {
+    if (state.token !== token) return;
+    dialog.close(); dialog.hidden = true;
+    dialog.classList.remove('is-open','is-closing');
+    setExpanded(state.trigger, false);
+    if (activeSurface === dialog) activeSurface = null;
+    if (!document.querySelector('dialog.detail-layer[open]')) document.body.classList.remove('has-open-dialog');
+    if (options.restoreFocus !== false && state.trigger?.isConnected) state.trigger.focus({preventScroll:true});
+    dialog.querySelectorAll('video').forEach(v => v.pause());
   };
-document.querySelectorAll(".detail-layer").forEach((layer) => {
-  layer.addEventListener("click", (event) => {
-    if (event.target === layer) hideSurface(layer);
+  if (reduceMotion) { finish(); return Promise.resolve(); }
+  state.panelAnimation = dialog.querySelector('.detail-panel').animate([
+    {opacity:1,transform:'none'},{opacity:0,transform:'translateY(8px) scale(.99)'}
+  ], {duration:180,easing:'ease-in',fill:'forwards'});
+  state.layerAnimation = dialog.animate([{opacity:1},{opacity:0}], {duration:180,fill:'forwards'});
+  return state.panelAnimation.finished.then(finish).catch(()=>{});
+}
+document.querySelectorAll('dialog.detail-layer').forEach(dialog => {
+  const panel = dialog.querySelector('.detail-panel');
+  const content = document.createElement('div');
+  content.className = 'dialog-content';
+  [...panel.children].filter(child => !child.matches('.reader-close')).forEach(child => content.append(child));
+  panel.append(content);
+  document.body.append(dialog);
+  dialog.addEventListener('cancel', event => { event.preventDefault(); hideSurface(dialog); });
+  dialog.addEventListener('keydown', event => {
+    if (event.key !== 'Tab') return;
+    const controls = [...dialog.querySelectorAll('button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])')].filter(e => !e.disabled && e.getClientRects().length);
+    const first = controls[0], last = controls.at(-1);
+    if (!first) { event.preventDefault(); return; }
+    if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+    else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
   });
+  dialog.addEventListener('click', event => { if(event.target === dialog) hideSurface(dialog); });
+  dialog.querySelectorAll('a[href="#callback"]').forEach(link => link.addEventListener('click', event => {
+    event.preventDefault();
+    hideSurface(dialog, {restoreFocus:false}).then(scrollToCallback);
+  }));
 });
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape")
-    document
-      .querySelectorAll(".detail-layer:not([hidden])")
-      .forEach(hideSurface);
-});
-document
-  .querySelectorAll('.detail-layer a[href="#callback"]')
-  .forEach((link) =>
-    link.addEventListener("click", () =>
-      hideSurface(link.closest(".detail-layer")),
-    ),
-  );
+
 function initNewsCarousel() {
   const e = document.querySelector("[data-news-carousel]"),
     t = e?.querySelector("[data-news-track]"),
@@ -406,9 +405,7 @@ function initNewsCarousel() {
     ((readerTitle.textContent = e.dataset.newsTitle),
       (readerDate.textContent = e.dataset.newsDate),
       (readerBody.textContent = e.dataset.newsBody),
-      showSurface(reader),
-      reduceMotion ||
-        reader.scrollIntoView({ behavior: "smooth", block: "nearest" }));
+      showSurface(reader));
   }),
 ),
   document
@@ -430,6 +427,7 @@ function initNewsCarousel() {
         const image = overlay.querySelector("[data-team-detail-image]");
         image.src = card.dataset.teamImage;
         image.alt = `${card.dataset.teamName}, ${card.dataset.teamRole}`;
+        image.style.objectPosition = card.dataset.teamFocal || "50% 50%";
         showSurface(overlay);
       }),
     );
@@ -685,10 +683,7 @@ function initSiteCursor() {
     ((documentTitle.textContent = e.dataset.documentTitle),
       (documentKind.textContent = `${e.dataset.documentKind} · раздел документов`),
       (documentFeedback.textContent = ""),
-      showSurface(documentViewer),
-      documentViewer.focus({ preventScroll: !0 }),
-      reduceMotion ||
-        documentViewer.scrollIntoView({ behavior: "smooth", block: "center" }));
+      showSurface(documentViewer));
   }),
 ),
   document
@@ -706,3 +701,5 @@ function initSiteCursor() {
   initHeroTrail(),
   initCallbackParticles(),
   initSiteCursor());
+
+window.goodwinDialogs = { open: showSurface, close: hideSurface };

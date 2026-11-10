@@ -1,0 +1,261 @@
+{
+  "inputs": {
+    "node_modules/react/cjs/react.production.js": {
+      "bytes": 18040,
+      "imports": [],
+      "format": "cjs"
+    },
+    "node_modules/react/index.js": {
+      "bytes": 186,
+      "imports": [
+        {
+          "path": "node_modules/react/cjs/react.production.js",
+          "kind": "require-call",
+          "original": "./cjs/react.production.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/scheduler/cjs/scheduler.production.js": {
+      "bytes": 10181,
+      "imports": [],
+      "format": "cjs"
+    },
+    "node_modules/scheduler/index.js": {
+      "bytes": 194,
+      "imports": [
+        {
+          "path": "node_modules/scheduler/cjs/scheduler.production.js",
+          "kind": "require-call",
+          "original": "./cjs/scheduler.production.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/react-dom/cjs/react-dom.production.js": {
+      "bytes": 7326,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "require-call",
+          "original": "react"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/react-dom/index.js": {
+      "bytes": 1359,
+      "imports": [
+        {
+          "path": "node_modules/react-dom/cjs/react-dom.production.js",
+          "kind": "require-call",
+          "original": "./cjs/react-dom.production.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/react-dom/cjs/react-dom-client.production.js": {
+      "bytes": 625168,
+      "imports": [
+        {
+          "path": "node_modules/scheduler/index.js",
+          "kind": "require-call",
+          "original": "scheduler"
+        },
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "require-call",
+          "original": "react"
+        },
+        {
+          "path": "node_modules/react-dom/index.js",
+          "kind": "require-call",
+          "original": "react-dom"
+        }
+      ],
+      "format": "cjs"
+    },
+    "node_modules/react-dom/client.js": {
+      "bytes": 1373,
+      "imports": [
+        {
+          "path": "node_modules/react-dom/cjs/react-dom-client.production.js",
+          "kind": "require-call",
+          "original": "./cjs/react-dom-client.production.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    "src/react-bits/CircularCarousel.css": {
+      "bytes": 4714,
+      "imports": []
+    },
+    "node_modules/react/cjs/react-jsx-runtime.production.js": {
+      "bytes": 976,
+      "imports": [],
+      "format": "cjs"
+    },
+    "node_modules/react/jsx-runtime.js": {
+      "bytes": 210,
+      "imports": [
+        {
+          "path": "node_modules/react/cjs/react-jsx-runtime.production.js",
+          "kind": "require-call",
+          "original": "./cjs/react-jsx-runtime.production.js"
+        }
+      ],
+      "format": "cjs"
+    },
+    "src/react-bits/CircularCarousel.jsx": {
+      "bytes": 33966,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement",
+          "original": "react"
+        },
+        {
+          "path": "src/react-bits/CircularCarousel.css",
+          "kind": "import-statement",
+          "original": "./CircularCarousel.css"
+        },
+        {
+          "path": "node_modules/react/jsx-runtime.js",
+          "kind": "import-statement",
+          "original": "react/jsx-runtime"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/react-bits/Aurora.css": {
+      "bytes": 212,
+      "imports": []
+    },
+    "src/react-bits/Aurora.jsx": {
+      "bytes": 17027,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement",
+          "original": "react"
+        },
+        {
+          "path": "src/react-bits/Aurora.css",
+          "kind": "import-statement",
+          "original": "./Aurora.css"
+        },
+        {
+          "path": "node_modules/react/jsx-runtime.js",
+          "kind": "import-statement",
+          "original": "react/jsx-runtime"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/enhancements.jsx": {
+      "bytes": 9914,
+      "imports": [
+        {
+          "path": "node_modules/react/index.js",
+          "kind": "import-statement",
+          "original": "react"
+        },
+        {
+          "path": "node_modules/react-dom/client.js",
+          "kind": "import-statement",
+          "original": "react-dom/client"
+        },
+        {
+          "path": "src/react-bits/CircularCarousel.jsx",
+          "kind": "import-statement",
+          "original": "./react-bits/CircularCarousel.jsx"
+        },
+        {
+          "path": "src/react-bits/Aurora.jsx",
+          "kind": "import-statement",
+          "original": "./react-bits/Aurora.jsx"
+        },
+        {
+          "path": "node_modules/react/jsx-runtime.js",
+          "kind": "import-statement",
+          "original": "react/jsx-runtime"
+        }
+      ],
+      "format": "esm"
+    }
+  },
+  "outputs": {
+    "assets/enhancements.js.LEGAL.txt": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 1528
+    },
+    "assets/enhancements.js": {
+      "imports": [],
+      "exports": [],
+      "entryPoint": "src/enhancements.jsx",
+      "cssBundle": "assets/enhancements.css",
+      "inputs": {
+        "node_modules/react/cjs/react.production.js": {
+          "bytesInOutput": 7969
+        },
+        "node_modules/react/index.js": {
+          "bytesInOutput": 51
+        },
+        "node_modules/scheduler/cjs/scheduler.production.js": {
+          "bytesInOutput": 3662
+        },
+        "node_modules/scheduler/index.js": {
+          "bytesInOutput": 51
+        },
+        "node_modules/react-dom/cjs/react-dom.production.js": {
+          "bytesInOutput": 3666
+        },
+        "node_modules/react-dom/index.js": {
+          "bytesInOutput": 253
+        },
+        "node_modules/react-dom/cjs/react-dom-client.production.js": {
+          "bytesInOutput": 205282
+        },
+        "node_modules/react-dom/client.js": {
+          "bytesInOutput": 253
+        },
+        "node_modules/react/cjs/react-jsx-runtime.production.js": {
+          "bytesInOutput": 364
+        },
+        "node_modules/react/jsx-runtime.js": {
+          "bytesInOutput": 51
+        },
+        "src/enhancements.jsx": {
+          "bytesInOutput": 9111
+        },
+        "src/react-bits/CircularCarousel.jsx": {
+          "bytesInOutput": 18703
+        },
+        "src/react-bits/CircularCarousel.css": {
+          "bytesInOutput": 0
+        },
+        "src/react-bits/Aurora.jsx": {
+          "bytesInOutput": 11614
+        },
+        "src/react-bits/Aurora.css": {
+          "bytesInOutput": 0
+        }
+      },
+      "bytes": 261670
+    },
+    "assets/enhancements.css": {
+      "imports": [],
+      "inputs": {
+        "src/react-bits/CircularCarousel.css": {
+          "bytesInOutput": 3675
+        },
+        "src/react-bits/Aurora.css": {
+          "bytesInOutput": 153
+        }
+      },
+      "bytes": 3829
+    }
+  }
+}

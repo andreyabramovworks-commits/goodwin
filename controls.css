@@ -1,0 +1,116 @@
+/* Goodwin controls. Radix Themes Button / Radio Cards visual patterns,
+   adapted to native controls and the existing brand. See THIRD_PARTY.md. */
+:root {
+  --control-radius: 999px;
+  --control-blue: #0079bd;
+  --control-blue-hover: #006aa7;
+  --control-ink: #143c55;
+}
+.button, .text-link, .lesson-action, .story-open,
+.crew-profile-button, .crew-actions > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: fit-content;
+  min-height: 44px;
+  gap: 10px;
+  padding: 12px 23px;
+  border: 1px solid transparent;
+  border-radius: var(--control-radius);
+  font-family: Manrope, Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1.5;
+  letter-spacing: 0;
+  text-decoration: none;
+  white-space: normal;
+  text-align: center;
+  user-select: none;
+  transition: background-color .2s, border-color .2s, box-shadow .2s, transform .2s;
+}
+.button:hover, .button:active, .crew-profile-button:hover,
+.story-open:hover svg { transform: none; }
+.button-primary {
+  color: #fff;
+  background: linear-gradient(180deg,#0079bd,#006ca9);
+  border-color: #0079b9;
+  box-shadow: inset 0 1px 1px #ffffff40, 0 3px 5px #0000000d, 0 9px 18px -9px #0000002b;
+}
+.button-primary:hover { color: #fff; background: linear-gradient(180deg,#0783c4,#0069a6); box-shadow: inset 0 1px 1px #ffffff30, 0 5px 9px #0000000e, 0 14px 24px -12px #00000038; transform: translateY(-1px); }
+.button-primary:active { background: #005f98; box-shadow: inset 0 1px 3px #003d5c33; }
+.button-primary > span[aria-hidden] { display: none; }
+.hero-actions { gap: 12px; }
+.hero-actions .button { min-height: 48px; padding: 12px 22px; font-size: 14px; }
+.text-link, .story-open, .lesson-action {
+  background: linear-gradient(180deg,#ffffffed,#f1f7fbd9);
+  border-color: #bdcfdc;
+  color: var(--control-ink);
+  box-shadow: inset 0 1px 0 #fff, 0 2px 3px -1px #0000001a, 0 8px 16px -12px #00000030;
+}
+.text-link:hover, .story-open:hover, .lesson-action:hover {
+  color: #074c76;
+  border-color: #9cb9cc;
+  background: #edf6fc;
+  box-shadow: 0 1px 3px #1139510d;
+}
+.text-link > span[aria-hidden] { display: none; }
+.story-open svg { width: 16px; height: 16px; }
+.hero-actions > .text-link { min-height: 48px; padding: 12px 20px; font-size: 14px; }
+.button-dark { color: #fff; background: #153a50; border-color: #153a50; box-shadow: inset 0 1px 0 #ffffff1a; }
+.button-dark:hover { color: #fff; background: #0b2c41; box-shadow: none; }
+.crew-copy h3 { font-weight: 600; letter-spacing: -.025em; }
+.crew-role { color: #acc5d5; font-size: 14px; line-height: 1.6; }
+.crew-bio { color: #c7d5de; font-size: 15px; line-height: 1.85; }
+.crew-actions { gap: 12px; margin-top: 30px; }
+.crew-profile-button {
+  color: #e6f3fc;
+  background: #213e51;
+  border-color: #3c596c;
+  box-shadow: inset 0 1px 0 #ffffff08;
+}
+.crew-profile-button:hover { color: #fff; background: #2b4c62; border-color: #58788e; }
+.crew-actions > a { color: #fff; background: linear-gradient(180deg,#0079bd,#006ca9); border-color: #118acb; box-shadow: inset 0 1px 0 #ffffff30,0 5px 10px #0002; }
+.crew-actions > a:hover { color: #fff; background: #0077b7; border-color: #269cda; }
+.crew-roster { gap: 12px; margin-top: 20px; }
+.crew-roster > button {
+  align-items: center;
+  min-width: 0;
+  gap: 16px;
+  padding: 18px;
+  border: 1px solid #284353;
+  border-radius: 12px;
+  background: #0d2535;
+  box-shadow: 0 2px 3px #0000000d;
+  transition: background-color .16s, border-color .16s, box-shadow .16s;
+}
+.crew-roster > button:hover { background: #153347; border-color: #45677c; }
+.crew-roster > button[aria-pressed="true"] {
+  background: #1d4057;
+  border: 1px solid #7299b2;
+  box-shadow: inset 0 0 0 1px #7299b22b;
+}
+.crew-roster img { width: 54px; height: 64px; border-radius: 8px; box-shadow: 0 1px 3px #0003; }
+.crew-roster strong { color: #f5faff; font: 600 16px/1.4 Manrope,Arial,sans-serif; letter-spacing: -.01em; margin-bottom: 5px; }
+.crew-roster small { color: #b3c6d3; font-size: 12px; line-height: 1.55; }
+.crew-roster > button[aria-pressed="true"] small { color: #cfdee8; }
+:is(.button,.text-link,.lesson-action,.story-open,.crew-profile-button,.crew-actions>a,.crew-roster>button,.orbit-control):focus-visible {
+  outline: 3px solid #3aadeb;
+  outline-offset: 4px;
+}
+@media (max-width: 980px) {
+  .crew-roster > button { gap: 12px; padding: 14px; }
+  .crew-roster strong { font-size: 14px; }
+}
+@media (max-width: 680px) {
+  .crew-actions { gap: 10px; }
+  .crew-profile-button,.crew-actions > a { font-size: 12px; padding: 11px 14px; }
+  .crew-roster { gap: 8px; }
+  .crew-roster > button { align-items: flex-start; padding: 12px 10px; gap: 10px; }
+  .crew-roster img { width: 46px; height: 54px; }
+  .crew-roster strong { font-size: 12px; line-height: 1.45; margin-bottom: 0; }
+  .hero-actions .button,.hero-actions > .text-link { font-size: 13px; padding: 12px 17px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .button,.text-link,.lesson-action,.story-open,.crew-profile-button,.crew-actions>a,.crew-roster>button { transition: none; }
+}

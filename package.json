@@ -4,9 +4,14 @@
   "private": true,
   "description": "Статический сайт клуба дрон-рейсинга «Гудвин».",
   "scripts": {
-    "start": "npx --yes http-server . -p 4177 -c-1"
+    "start": "npx --yes http-server . -p 4177 -c-1",
+    "build": "node scripts/build.mjs"
   },
   "dependencies": {
-    "@videojs/html": "10.3.0"
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
   }
 }

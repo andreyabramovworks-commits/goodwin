@@ -1,0 +1,108 @@
+/* Shared photographic depth. Web Creator / Blue Cloudy Clean Modern;
+   layered neutral elevation adapted from Beautiful Shadows. */
+main > section {
+  position: relative;
+  isolation: isolate;
+  overflow: clip;
+  background: #f3f8fc;
+}
+main > section > .container { position: relative; z-index: 1; }
+main > section::before, main > section::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+main > section::before {
+  inset: -12%;
+  border: 0;
+  border-radius: 0;
+  width: auto; height: auto;
+  background: radial-gradient(ellipse at 85% 25%,#afdff38c,transparent 52%),
+    radial-gradient(ellipse at 10% 75%,#c4dcec80,transparent 54%),
+    linear-gradient(165deg,#fff9 0%,transparent 48%,#bcd9e74d 100%);
+  transform: translate3d(var(--scene-x,0px),var(--scene-y,0px),0);
+}
+main > section::after {
+  inset: auto -15% -130px;
+  height: 260px;
+  width: auto;
+  border: 0;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at 50% 0%,#ffffffcc,transparent 68%);
+  box-shadow: none;
+  transform: translate3d(calc(var(--scene-x,0px) * -.5),0,0);
+}
+.hero { background: #edf6fc; }
+.intro { background: #f8fbfd; }
+.schedule-section { background: #e6f1f8; }
+.news-section { background: #f6fbff; }
+.team-section { background: #071c2a; }
+.team-section::before {
+  background: radial-gradient(ellipse at 83% 28%,#16476499,transparent 58%),
+    radial-gradient(ellipse at 18% 90%,#14364f80,transparent 60%);
+}
+.team-section::after { background: radial-gradient(ellipse at 50% 0%,#2c586f38,transparent 68%); }
+.documents-section { background: #f5f9fc; }
+.callback { background: #dfedf6; }
+.scribble,.little-sun { display: none; }
+.hero-photo-wrap, .about-visuals figure {
+  box-shadow: 0 2.8px 2.2px #00000009,0 6.7px 5.3px #0000000c,
+    0 12.5px 10px #0000000f,0 22.3px 17.9px #00000012,
+    0 41.8px 33.4px #00000016,0 70px 60px #00000012;
+}
+.hero-visual { isolation: isolate; }
+.hero-visual::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 7%; right: 3%; bottom: -86px;
+  height: 110px;
+  background: url('assets/media/fpv-flight.jpg') center bottom / cover;
+  border-radius: 20px;
+  transform: scaleY(-1);
+  opacity: .13;
+  mask-image: linear-gradient(transparent 8%,#000 100%);
+  pointer-events: none;
+}
+.about-visuals::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0; bottom: -85px; width: 76%; height: 105px;
+  background: url('assets/media/training-simulators.jpg') center bottom / cover;
+  transform: scaleY(-1);
+  opacity: .12;
+  mask-image: linear-gradient(transparent,#000);
+  pointer-events: none;
+}
+.schedule-shell,.callback-form {
+  background: linear-gradient(145deg,#ffffffc9,#f3f9ffb0);
+  box-shadow: 0 0 0 1px #0000000f,0 1px 1px -.5px #0000000f,
+    0 3px 3px -1.5px #0000000f,0 6px 6px -3px #0000000f,
+    0 12px 12px -6px #0000000f,0 24px 24px -12px #0000000f;
+  border: 1px solid #ffffffe6;
+}
+.lesson-card { background: linear-gradient(145deg,#fff,#f5faff); box-shadow: 0 7px 18px -12px #00000029; }
+.crew-stage { box-shadow: 0 24px 44px -20px #00000080; border: 1px solid #a9d7f01c; }
+.crew-roster > button { border-radius: 20px; }
+.crew-roster > button[aria-pressed=true] { box-shadow: inset 0 1px 0 #ffffff12,0 6px 14px -8px #0009; }
+.document-row { box-shadow: 0 8px 20px -16px #00000040; }
+.orbit-control {
+  width: auto; min-width: 82px; height: 44px; padding: 0 21px;
+  border-radius: 999px; font: 650 13px/1 Manrope,Arial,sans-serif;
+  background: linear-gradient(#fff,#f1f7fc);
+  box-shadow: inset 0 1px 0 #fff,0 3px 8px -4px #00000030;
+}
+.news-carousel-controls button { width: auto; min-width: 82px; padding: 0 20px; font-size: 13px; }
+.site-footer { background: linear-gradient(150deg,#eef6fb,#d7e7f1); box-shadow: inset 0 1px 0 #fff; }
+@media(max-width:680px) {
+  .hero-visual::after { bottom: -50px; height: 70px; opacity: .09; }
+  .about-visuals::after { bottom: -50px; height: 65px; }
+  .crew-roster > button { border-radius: 16px; }
+  main > section::before { transform: none; }
+}
+@media(prefers-reduced-motion:reduce) {
+  main > section::before,main > section::after { transform: none; }
+  .button-primary:hover { transform: none; }
+}
