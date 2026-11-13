@@ -51,14 +51,4 @@ Build passed. `qa/v67-verification.json`: no JavaScript errors; no overflow at 1
 
 ## Schedule photograph, v6.8
 Replaced only the schedule photo with the existing `fpv-goggles-training.jpg`, showing a participant in FPV goggles, and adjusted its crop. This avoids repeating the about-section photograph. No website copy changed, per user's instruction. Verified image composition in desktop/mobile captures and retained schedule booking behavior with no overflow (`qa/v68-verification.json`). Preview: http://127.0.0.1:4177/?review=photo-6.8.
-# Deployment note
-
-The footer developer signature is served as a same-origin iframe. The reverse proxy must allow same-origin framing for Goodwin responses:
-
-```caddyfile
-X-Frame-Options "SAMEORIGIN"
-Content-Security-Policy "... frame-ancestors 'self'; ..."
-```
-
-Do not use `DENY` or `frame-ancestors 'none'` for this site: they block the signature panel inside the footer.
 
