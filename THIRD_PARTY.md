@@ -25,10 +25,11 @@ Native dialog semantics and bounded cancellable transitions preserve the static 
 Existing repository media, font references, brand assets and developer attribution are preserved. Their provenance is unchanged by this local UI refinement.
 
 ## Footer signature — user-supplied approved package
-- Source package: `gudvin-footer-transfer.zip`, supplied by the site owner on 13 November 2026.
-- Local assets: `assets/footer/founders-art.png`, `assets/footer/footer-signature-v6.html`, `assets/footer/mark.svg`.
-- Runtime inside the isolated signature iframe: Three.js 0.180.0 (MIT, https://github.com/mrdoob/three.js) and Cormorant Garamond (SIL Open Font License, https://fonts.google.com/specimen/Cormorant+Garamond), loaded only by that component.
-- Fallback: the supplied SVG mark remains visible if WebGL or the external 3D module cannot load.
+- Source package: `sibiryakk-plashka.zip`, supplied by the site owner on 13 November 2026.
+- Local assets: `assets/footer/mark.svg`, `assets/vendor/three/three.module.js`, `assets/vendor/three/SVGLoader.js`.
+- Runtime: Three.js 0.180.0 (MIT, https://github.com/mrdoob/three.js) and SVGLoader from the same package, stored locally. Cormorant Garamond is served by Google Fonts under the SIL Open Font License, https://fonts.google.com/specimen/Cormorant+Garamond.
+- Integration: the supplied plaque is rendered directly in the footer (not as a framed page). It preserves the 3D sign, smooth turn, carved wood treatment, animated lettering, light sweep, wood plane, and reduced-motion mode.
+- Fallback: the supplied SVG mark remains visible if WebGL cannot load.
 
 ## Controls refinement — Radix Themes reference
 - Source: https://github.com/radix-ui/themes
