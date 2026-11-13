@@ -589,8 +589,8 @@ function initScrubbedWords(e) {
       s || document.hidden || (s = requestAnimationFrame(l));
     };
   (document.addEventListener("pointermove", (e) => {
-    if (e.target.closest("[data-no-trail], a, button, input, select, textarea"))
-      return ((o = null), (a = null), (r = []), void u());
+    /* The drone leaves its flight trace over every desktop control as well.
+       Actual form interaction remains untouched because the canvas is inert. */
     const t = { x: e.clientX + 24, y: e.clientY + 24 };
     if (a) {
       const e = Math.hypot(t.x - a.x, t.y - a.y);

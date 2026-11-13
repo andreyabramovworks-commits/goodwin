@@ -24,6 +24,12 @@ Native dialog semantics and bounded cancellable transitions preserve the static 
 
 Existing repository media, font references, brand assets and developer attribution are preserved. Their provenance is unchanged by this local UI refinement.
 
+## Footer signature — user-supplied approved package
+- Source package: `gudvin-footer-transfer.zip`, supplied by the site owner on 13 November 2026.
+- Local assets: `assets/footer/founders-art.png`, `assets/footer/footer-signature-v6.html`, `assets/footer/mark.svg`.
+- Runtime inside the isolated signature iframe: Three.js 0.180.0 (MIT, https://github.com/mrdoob/three.js) and Cormorant Garamond (SIL Open Font License, https://fonts.google.com/specimen/Cormorant+Garamond), loaded only by that component.
+- Fallback: the supplied SVG mark remains visible if WebGL or the external 3D module cannot load.
+
 ## Controls refinement — Radix Themes reference
 - Source: https://github.com/radix-ui/themes
 - Inspected revision: 1faff10ac26ae17f09944d418c6949b93fc6b566

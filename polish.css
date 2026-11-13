@@ -654,6 +654,91 @@ body { color:var(--ink-strong); font-family:var(--font-body); font-size:16px; fo
   .button,.text-link,.days button,.footer-developer { min-height:44px; }
 }
 
+/* V7.5 — approved partner artwork and developer signature in the footer. */
+.site-footer.site-footer--partners {
+  padding:32px 0;
+  background:
+    radial-gradient(circle at 84% 8%,#74c9ed24,transparent 28%),
+    linear-gradient(115deg,#edf7fb,#d8eaf4);
+}
+.site-footer.site-footer--partners .footer-layout {
+  width:min(1160px,calc(100% - 48px));
+  grid-template-columns:minmax(180px,230px) minmax(300px,1fr) 320px;
+  gap:clamp(24px,4vw,48px);
+}
+.site-footer--partners .brand-logo { width:min(100%,230px); }
+.footer-partners { min-width:0; }
+.footer-partners__art {
+  position:relative;
+  width:100%;
+  aspect-ratio:3 / 1;
+  overflow:visible;
+}
+.footer-partners__art img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 5%,#000 95%,transparent 100%);
+  mask-image:linear-gradient(90deg,transparent 0%,#000 5%,#000 95%,transparent 100%);
+  filter:drop-shadow(0 7px 12px #3980a320);
+}
+.footer-partners__link {
+  position:absolute;
+  top:19%;
+  height:24%;
+  border-radius:5px;
+  cursor:pointer;
+  transition:background-color .2s ease,box-shadow .2s ease;
+}
+.footer-partners__link--hands { left:3%; width:34%; }
+.footer-partners__link--fortune { left:69%; width:29%; }
+.footer-partners__link:hover,
+.footer-partners__link:focus-visible {
+  outline:none;
+  background-color:#ffffff40;
+  box-shadow:0 0 0 2px #1188bc;
+}
+.footer-partners__privacy {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-height:32px;
+  margin-top:6px;
+  color:#316f90;
+  font-size:12px;
+  font-weight:650;
+  text-decoration:none;
+  text-underline-offset:4px;
+}
+.footer-partners__privacy:hover,
+.footer-partners__privacy:focus-visible { color:#0a78aa; text-decoration:underline; }
+.footer-signature {
+  justify-self:end;
+  display:block;
+  width:320px;
+  height:126px;
+  border:0;
+  overflow:hidden;
+  background:transparent;
+}
+@media (max-width:900px) {
+  .site-footer.site-footer--partners .footer-layout {
+    grid-template-columns:minmax(170px,220px) minmax(280px,1fr);
+    gap:26px 34px;
+  }
+  .footer-signature { grid-column:2; justify-self:start; }
+}
+@media (max-width:680px) {
+  .site-footer.site-footer--partners { padding:34px 0 calc(34px + env(safe-area-inset-bottom)); }
+  .site-footer.site-footer--partners .footer-layout { display:flex; flex-direction:column; align-items:flex-start; gap:24px; }
+  .site-footer--partners .brand-logo { width:min(70vw,230px); }
+  .footer-partners { width:100%; }
+  .footer-partners__link { top:18%; height:28%; }
+  .footer-signature { width:min(320px,100%); max-width:100%; }
+}
+
 /* V7.4 — FPV frame border + restrained depth treatment. */
 .intro-layout { padding-top:0; }
 .hero-photo-wrap {
@@ -936,4 +1021,94 @@ body { color:var(--ink-strong); font-family:var(--font-body); font-size:16px; fo
   .hero-copy h1 { font-size:clamp(38px,6vw,58px); }
   .hero-photo-wrap { aspect-ratio:4/3; }
   .welcome-note { position:absolute; left:18px; right:18px; bottom:18px; width:auto; margin:0; }
+}
+
+/* Instructor profile follows the proven news-reader hierarchy: image on a dark stage,
+   copy on an independent light reading surface. */
+.detail-panel--team {
+  gap:18px;
+  padding:18px;
+  align-items:stretch;
+}
+.detail-panel--team .team-detail-portrait {
+  min-height:420px;
+  height:auto;
+  padding:16px;
+  border:1px solid #eaf8ff55;
+  border-radius:18px;
+  background:linear-gradient(145deg,#153b50ee,#0b2236e6);
+  box-shadow:inset 0 1px 0 #ffffff26;
+}
+.detail-panel--team .team-detail-portrait img {
+  min-height:0;
+  height:100%;
+  border:4px solid #eaf4fbdb;
+  border-radius:13px;
+  background:#0b2435;
+  box-shadow:0 18px 28px -14px #0009;
+}
+.detail-panel--team .team-detail-copy {
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-width:0;
+  padding:54px 30px 34px;
+  border-radius:18px;
+  background:#f6fbfff2;
+  box-shadow:inset 0 1px #ffffffb8;
+}
+.detail-panel--team .team-detail-copy > p:first-child {
+  margin:0 40px 18px 0;
+  color:#176589;
+}
+.detail-panel--team .team-detail-copy h3 {
+  max-width:none;
+  margin:0 0 24px;
+  color:#1a2c38;
+  font:650 clamp(26px,2.4vw,34px)/1.18 Manrope,Arial,sans-serif;
+  letter-spacing:-.025em;
+}
+.detail-panel--team .team-detail-copy > p:nth-of-type(2) {
+  max-width:52ch;
+  margin:0 0 28px;
+  color:#324c5e;
+  font-size:15px;
+  line-height:1.85;
+}
+.detail-panel--team .team-detail-copy .button { align-self:flex-start; margin-top:auto; font-size:12px; }
+@media (max-width:680px) {
+  .detail-panel--team { padding:10px; gap:10px; }
+  .detail-panel--team .team-detail-portrait { min-height:0; height:220px; padding:12px; }
+  .detail-panel--team .team-detail-portrait img { object-fit:contain; }
+  .detail-panel--team .team-detail-copy { padding:26px 22px; }
+  .detail-panel--team .team-detail-copy h3 { font-size:27px; }
+  .detail-panel--team .team-detail-copy > p:nth-of-type(2) { font-size:14px; }
+}
+
+/* Mobile crew selector only. Desktop composition above 680px deliberately stays intact. */
+@media (max-width:680px) {
+  .scroll-progress { display:none; }
+  .team-section.is-enhanced .crew-stage { display:grid; grid-template-columns:1fr; gap:0; padding:12px; border-radius:24px; }
+  .team-section.is-enhanced .crew-portrait { display:grid; place-items:center; height:280px; min-height:0; aspect-ratio:auto; border-radius:17px 17px 10px 10px; background:#102f43; }
+  .team-section.is-enhanced .crew-portrait img { width:100%; height:280px!important; max-height:280px; object-fit:cover; object-position:50% 37%!important; }
+  .team-section.is-enhanced .team-layout > div:first-child .display { border:0; box-shadow:none; text-decoration:none; }
+  .team-section.is-enhanced .crew-copy { padding:25px 18px 18px; }
+  .team-section.is-enhanced .crew-role { margin-bottom:10px; font-size:12px; }
+  .team-section.is-enhanced .crew-copy h3 { margin-bottom:14px; font-size:clamp(30px,8.5vw,36px); }
+  .team-section.is-enhanced .crew-bio { font-size:15px; line-height:1.65; }
+  .team-section.is-enhanced .crew-specialties { margin:18px 0 22px; }
+  .team-section.is-enhanced .crew-actions { display:grid; grid-template-columns:1fr; gap:10px; margin-top:24px; }
+  .team-section.is-enhanced .crew-actions > :is(a,button) { display:flex; box-sizing:border-box; width:100%; min-height:52px; align-items:center; justify-content:center; padding:13px 18px; border-radius:999px; text-align:center; }
+  .team-section.is-enhanced .crew-profile-button { border:1px solid #6b94aa; color:#eff9ff; background:#1d4055; }
+  .team-section.is-enhanced .crew-actions > a { border:1px solid #139be0; color:#fff; background:linear-gradient(180deg,#078ed5,#006fae); box-shadow:inset 0 1px 0 #ffffff42,0 9px 18px -13px #00111dcc; font-weight:700; }
+  .team-section.is-enhanced .crew-roster { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; width:100%; margin:14px 0 0; padding:0; overflow:visible; scroll-snap-type:none; }
+  .team-section.is-enhanced .crew-roster > button { display:grid; grid-template-columns:34px minmax(0,1fr); align-items:center; min-width:0; min-height:64px; padding:8px; gap:7px; border:1px solid #33566a; border-radius:14px; background:#0d293a; scroll-snap-align:none; }
+  .team-section.is-enhanced .crew-roster > button[aria-pressed="true"] { border-color:#6dc6ef; background:#174258; box-shadow:inset 0 1px 0 #ffffff1f,0 7px 15px -13px #000; }
+  .team-section.is-enhanced .crew-roster img { width:34px; height:42px; border-radius:8px; }
+  .team-section.is-enhanced .crew-roster small { display:none; }
+  .team-section.is-enhanced .crew-roster strong { display:block; overflow:hidden; color:#f5fbff; font-size:0; font-weight:700; line-height:1.2; text-overflow:ellipsis; white-space:nowrap; }
+  .team-section.is-enhanced .crew-roster strong::after { font-size:12px; }
+  .team-section.is-enhanced .crew-roster > button:nth-child(1) strong::after { content:"Егор"; }
+  .team-section.is-enhanced .crew-roster > button:nth-child(2) strong::after { content:"Артём"; }
+  .team-section.is-enhanced .crew-roster > button:nth-child(3) strong::after { content:"Олег"; }
 }

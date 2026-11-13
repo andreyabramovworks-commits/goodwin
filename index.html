@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="experience.css?v=8ff600e-browserfix" />
     <link rel="stylesheet" href="controls.css?v=8ff600e-browserfix" />
     <link rel="stylesheet" href="atmosphere.css?v=8ff600e-browserfix" />
-    <link rel="stylesheet" href="polish.css?v=8ff600e-browserfix" />
+    <link rel="stylesheet" href="polish.css?v=footer-20261113" />
   </head>
   <body>
     <a class="skip-link" href="#main">К содержанию</a>
@@ -183,7 +183,7 @@
               Выберите день — он автоматически сохранится в форме записи.
             </p>
           </div>
-          <div class="schedule-shell reveal-on-scroll" data-no-trail>
+          <div class="schedule-shell reveal-on-scroll">
             <div class="schedule-main">
             <div class="days" role="tablist" aria-label="Дни недели">
               <button
@@ -322,7 +322,7 @@
             </h2>
             <p class="news-intro reveal-on-scroll">Материалы «Гудвина» о технике, тренировках и мире FPV — без лишних терминов, но с деталями, которые помогают увидеть спорт изнутри.</p>
           </div>
-          <div class="news-carousel" data-news-carousel data-no-trail>
+          <div class="news-carousel" data-news-carousel>
             <div id="news-experience" aria-label="Карусель материалов"></div>
             <div class="news-viewport" data-news-viewport>
               <div class="news-track" data-news-track>
@@ -506,7 +506,7 @@
               спортивное пилотирование и соревновательную практику.
             </p>
           </div>
-          <div class="team-list" data-no-trail>
+          <div class="team-list">
             <article class="team-member" data-team-card data-team-name="Егор Газин" data-team-role="Инструктор по мультироторным системам" data-team-image="assets/media/egor-gazin.jpg" data-team-bio="Егор Дмитриевич Газин обучает управлению мультироторными системами разных классов, пайке и техническому обслуживанию БПЛА. Его основной фокус — гоночные дроны." data-team-focal="50% 64%">
       <button class="team-photo-button" type="button" data-team-toggle aria-expanded="false" aria-controls="team-dialog" aria-label="Об инструкторе: Егор Газин">
         <img src="assets/media/egor-gazin.jpg" alt="Егор Газин, Инструктор по мультироторным системам" loading="lazy" style="object-position:50% 64%">
@@ -583,7 +583,6 @@
           <div
             class="document-list reveal-on-scroll"
             aria-label="Список документов"
-            data-no-trail
             data-scroll-stage
           >
             <div>
@@ -640,7 +639,6 @@
         <dialog id="document-dialog" aria-labelledby="document-dialog-title"
           class="document-viewer detail-layer"
           data-document-viewer
-          data-no-trail
           hidden
           tabindex="-1"
         >
@@ -702,7 +700,6 @@
           <form
             class="callback-form reveal-on-scroll"
             data-callback-form
-            data-no-trail
           >
             <label
               >Как вас зовут<input
@@ -762,8 +759,8 @@
         </div>
       </section>
     </main>
-    <footer class="site-footer">
-      <div class="container">
+    <footer class="site-footer site-footer--partners">
+      <div class="container footer-layout">
         <a class="brand" href="#top"
           ><img
             class="brand-logo"
@@ -772,31 +769,43 @@
             width="280"
             height="95"
         /></a>
-        <div class="footer-info">
-          <p>
-            Клуб дрон-рейсинга «Гудвин». Симулятор, техника и практика полёта.
-          </p>
-          <a href="#documents">Политика обработки данных</a>
+        <div class="footer-partners">
+          <div class="footer-partners__art">
+            <img
+              src="assets/footer/founders-art.png"
+              alt="Основатели клуба: БАНО «Золотые руки ангела» и АНО ВПК «ФОРТУНА»"
+              width="2172"
+              height="724"
+            />
+            <a
+              class="footer-partners__link footer-partners__link--hands"
+              href="https://nosilki.su/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="БАНО «Золотые руки ангела» — открыть сайт"
+            ></a>
+            <a
+              class="footer-partners__link footer-partners__link--fortune"
+              href="https://vk.ru/fortuna_vpc"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="АНО ВПК «ФОРТУНА» — открыть страницу ВКонтакте"
+            ></a>
+          </div>
+          <a class="footer-partners__privacy" href="#documents"
+            >Политика обработки данных</a
+          >
         </div>
-        <a
-          class="footer-developer"
-          href="https://t.me/sibiryakk0"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Разработчик сайта @sibiryakk0 — открыть Telegram"
-          ><span class="footer-developer__monogram" aria-hidden="true">S</span
-          ><span class="footer-developer__copy"
-            ><small>Digital signature · web design</small
-            ><strong>@sibiryakk0</strong
-            ><span class="footer-developer__stroke" aria-hidden="true"></span></span
-          ><svg class="footer-developer__telegram" viewBox="0 0 24 24" aria-hidden="true"
-            ><path d="M21 3 3.8 9.6c-1.2.5-1.2 1.2-.2 1.5l4.4 1.4 1.7 5.2c.2.7.1 1 .8 1 .6 0 .9-.3 1.2-.6l2.1-2 4.5 3.3c.8.5 1.4.3 1.6-.8L22.8 4c.3-1.4-.5-1.7-1.8-1Z"/><path d="m8 12.5 10.7-6.6-8.3 8.2"/></svg
-          ></a
-        >
+        <iframe
+          class="footer-signature"
+          src="assets/footer/footer-signature-v6.html?embed"
+          title="Подпись разработчика sibiryakk"
+        ></iframe>
       </div>
     </footer>
     <script type="module" src="assets/enhancements.js?v=8ff600e-browserfix"></script>
     <script src="script.js?v=8ff600e-browserfix"></script>
+    <script src="footer-signature-cursor.js?v=mobile-crew-20261113"></script>
 
   </body>
 </html>
